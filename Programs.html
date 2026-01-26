@@ -1,6 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="gvk.jpg">
+  <title>GVK Charitable & Educational Trust</title>
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 4px solid #0a8735;
+      text-align: center;
+      padding: 10px;
+    }
+    header img {
+      heightt=100%;
+      width: 30%;
+   
+    }
+    nav {
+      background: #0a8735;
+      color: #fff;
+      padding: 10px 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #0a8735;
+      margin-bottom: 10px;
+    }
+
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .two-column > div {
+      flex: 1 1 280px;
+    }
+
+    .contact-box {
+      background: #f0fff5;
+      border-left: 4px solid #0a8735;
+      padding: 15px;
+    }
+
+    .contact-item {
+      margin-bottom: 8px;
+    }
+    .contact-item span {
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0a8735;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with your banner image -->
+  <header id="home">
+    <img src="/image.jpeg" alt="GVK Charitable & Educational Trust Banner" />
+  </header>
+
+  <!-- Simple navigation -->
+  <nav>
+    <a href="index.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="Contact us.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- About section -->
+    <section id="about">
+      <h1>GVK Charitable &amp; Educational Trust</h1>
+      <p>
+       Vision</p>
+      <p style="text-align: justify;">To build a compassionate, enlightened, and inclusive society rooted in Indian cultural heritage, where education, health,
+        environmental responsibility, and social welfare empower every individual to live with dignity,
+        knowledge, and harmony, inspired by the principles of Bhagavad Ramanujulu.</p>
+      <p>Mission</p>
+      <p style="text-align: justify;">
+        To serve the public good by promoting quality education, healthcare, and relief to the poor;
+        supporting wildlife and environmental awareness; preserving Indian culture, arts, and traditions; encouraging research, community participation, and youth development; 
+        and collaborating with like-minded organizations to foster holistic human development and sustainable social progress across India.
+      </p>
+    </section>
+
+    <!-- Programs / activities -->
+    <section id="programs">
+      <h2>Our Activities</h2>
+      <div class="two-column">
+        <div>
+          <ul>
+            <li>Educational support for students in need.</li>
+            <li>Scholarships and fee assistance for deserving learners.</li>
+            <li>Workshops, seminars, and training programs.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Cultural and sports activities for youth development.</li>
+            <li>Community outreach and charitable initiatives.</li>
+            <li>Collaboration with schools, colleges, and NGOs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  <footer>
+    &copy; <span id="year"></span> GVK Charitable &amp; Educational Trust. All rights reserved.
+  </footer>
+
+  <script>
+    // Auto update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
+
+
+
+
+
+
+
+
 
