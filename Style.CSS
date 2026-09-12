@@ -15,22 +15,46 @@ main {
   padding: 1rem;
   height: 50px;
 }
-@media (max-width: 768px) {
+header {
+    width: 100%;
+    height: 220px;
+    background: #ffffff;
+    border-bottom: 4px solid #0a8735;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
 
-    header-banner {
-        height: 150px;
-    }
+header img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
 
-  navbar {
-        height: auto;
-        padding: 10px 5px;
-        flex-wrap: wrap;
-    }
+nav {
+    width: 100%;
+    height: 52px;
+    background: #0a8735;
 
-    navbar a {
-        font-size: 13px;
-        margin: 5px 8px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd200;
 }
   
 header, nav{
