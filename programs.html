@@ -1,175 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="gvk.jpg">
-  <title>GVK Charitable & Educational Trust</title>
-  
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f5f5f5;
-      color: #333;
-    }
-    header {
-      background: #ffffff;
-      border-bottom: 4px solid #0a8735;
-      text-align: center;
-      padding: 10px;
-    }
-    header img {
-      heightt=100%;
-      width: 30%;
-   
-    }
-    nav {
-      background: #0a8735;
-      color: #fff;
-      padding: 10px 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { text-decoration: underline; }
-
-    .container {
-      max-width: 1100px;
-      margin: 20px auto;
-      padding: 0 15px;
-    }
-
-    section {
-      background: #fff;
-      border-radius: 4px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-
-    h1, h2 {
-      color: #0a8735;
-      margin-bottom: 10px;
-    }
-
-    .two-column {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .two-column > div {
-      flex: 1 1 280px;
-    }
-
-    .contact-box {
-      background: #f0fff5;
-      border-left: 4px solid #0a8735;
-      padding: 15px;
-    }
-
-    .contact-item {
-      margin-bottom: 8px;
-    }
-    .contact-item span {
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #0a8735;
-      color: #fff;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 600px) {
-      nav { justify-content: flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <title>Programs - GVK Charitable & Educational Trust</title>
 </head>
 <body>
-  <!-- Header with your banner image -->
-  <header id="home">
-    <img src="/image.jpeg" alt="GVK Charitable & Educational Trust Banner" />
+
+  <header>
+    <img src="image logo 2.jpeg" alt="GVK Charitable & Educational Trust Banner">
   </header>
 
-  <!-- Simple navigation -->
   <nav>
     <a href="index.html">About</a>
-    <a href="programs.html">Programs</a>
+    <a href="programs.html" class="active">Programs</a>
     <a href="jobnotification.html">Job Notifications</a>
-    <a href="Contact us.html">Contact</a>
+    <a href="contact.html">Contact</a>
     <a href="notification.html">Notification</a>
   </nav>
 
-  <div class="container">
-    <!-- About section -->
-    <section id="about">
-      <h1>GVK Charitable &amp; Educational Trust Services</h1>
-     <p><b>
-       EDUCATIONAL</b></p>
-      <p style="text-align: justify;">To run, maintain or assist any educational or other institution for Coaching,
-        Guidance, Counseling or Vocational Training or to Grant Individual Scholarships for Poor, Deserving and Needy Students for Elementary and Higher Education,
-        Education herein referred also includes education for adults and to promote the Principles of Bhagavad Ramanujulu.</p>
-      <p><b>Medical</b></p>
+  <main class="container">
+
+    <section>
+      <h1>Our Programs</h1>
+      <p class="subtitle">Everything the Trust runs, in one place.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>Education Support</h3>
+          <p>Tuition help, books, and school supplies for children from
+          low-income families, so a shortage of funds never ends a
+          student's education.</p>
+        </div>
+
+        <div class="card">
+          <h3>Scholarships</h3>
+          <p>Merit- and need-based scholarships for school and college
+          students, with fee assistance for those about to drop out due
+          to financial hardship.</p>
+        </div>
+
+        <div class="card">
+          <h3>Workshops &amp; Training</h3>
+          <p>Skill-building workshops and seminars for students and
+          young adults, covering both academic subjects and practical,
+          job-ready skills.</p>
+        </div>
+
+        <div class="card">
+          <h3>Health &amp; Relief</h3>
+          <p>Basic healthcare camps and relief support for the poor,
+          run in partnership with local volunteers and medical
+          professionals.</p>
+        </div>
+
+        <div class="card">
+          <h3>Environment &amp; Wildlife</h3>
+          <p>Awareness drives on environmental responsibility and
+          wildlife protection, including tree-planting and clean-up
+          initiatives.</p>
+        </div>
+
+        <div class="card">
+          <h3>Culture, Sports &amp; Youth</h3>
+          <p>Cultural events, sporting activities, and youth development
+          programs that keep Indian traditions and community spirit
+          alive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Community Outreach</h2>
       <p style="text-align: justify;">
-       To run, maintain or assist any medical institution, nursing home or clinics or to grant assistance to needy and indigent persons for meeting the cost of medical treatment..
+        We work alongside schools, colleges, and other NGOs across India
+        to reach more communities than we could on our own. If your
+        organization would like to partner with us, get in touch through
+        our <a href="contact.html" style="color:#0a8735; font-weight:600;">Contact page</a>.
       </p>
-       <p><b>Relief to the poor</b> </p>
-      <p style="text-align: justify;">
-       To  give financial or other assistance in kind by way of distribution of books, note-books, clothes, uniforms, or meals for the poor and indigent and to the persons affected by natural calamities
-      </p>
-      <p><b>Birds, Animal & wildlife welfare</b> </p>
-      <p style="text-align: justify;">
-       To give financial or other assistance in kind by way of medicine, food, shelter homes to veterinary hospitals, National parks, sanctuary or zoological gardens.
-      </p>
-      
-      <p style="text-align: justify;">
-       <b>To undertake research and publication</b> of literature on issues relating to environment and society, and to do any other thing necessary for the promotion of a better understanding amongst people in India.
-      </p>
-      <p style="text-align: justify;">
-       <b>To network</b> with various NGO’s charitable trusts, Citizens support groups, etc., all over the world which seek to determine and influence general public welfare policy in India..
-      </p>
-       <p style="text-align: justify;">
-       <b>To promote</b> all round development in the human life emphasis old Indian Culture and Heritage i.e., 
-         Yoga, Painting, Music and Classical Dances, 
-         Art & Crafts by assisting skilled craftsman to showcase their skills before the world.
-      </p>
-      <b>To organize</b>, Assist, Finance debates/ Education Contests, Quiz and Competitions in Schools and Villages.
-      </p>
-      <b> To establish</b> Play Schools & Educational Organisations. 
-      </p>
+    </section>
+
+  </main>
+
   <footer>
     &copy; <span id="year"></span> GVK Charitable &amp; Educational Trust. All rights reserved.
   </footer>
 
   <script>
-    // Auto update year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
