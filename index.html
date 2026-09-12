@@ -1,79 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" type="image/x-icon" href="gvk.jpg">
+
   <title>GVK Charitable & Educational Trust</title>
-  
+
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* =========================
+       BASIC RESET
+    ========================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
       background: #f5f5f5;
       color: #333;
+      overflow-x: hidden;
     }
+
+
+    /* =========================
+       WEBSITE HEADER / BANNER
+    ========================== */
+
     header {
+      width: 100%;
+      height: 220px;              /* REDUCED HEADER HEIGHT */
       background: #ffffff;
       border-bottom: 4px solid #0a8735;
-      text-align: center;
-      padding: 10px;
-    }
 
-    header-banner {
-    width: 30%;
-    height: 100px;
-}
-
-header-banner img {
-    width: 30%;
-    height: 80%;
-    object-fit: cover;
-}
-    nav {
-      background: #0a8735;
-      color: #fff;
-      padding: 10px 15px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      align-items: center;
+
+      overflow: hidden;
+      padding: 0;
+    }
+
+    header img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;       /* SHOW COMPLETE IMAGE */
+      object-position: center;
+
+      display: block;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      width: 100%;
+      background: #0a8735;
+      color: #fff;
+
+      min-height: 50px;
+
+      padding: 8px 15px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 25px;
       flex-wrap: wrap;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
-    nav a:hover { text-decoration: underline; }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================
+       MAIN CONTAINER
+    ========================== */
 
     .container {
+      width: 95%;
       max-width: 1100px;
+
       margin: 20px auto;
-      padding: 0 15px;
+      padding: 0;
     }
+
+
+    /* =========================
+       CONTENT SECTIONS
+    ========================== */
 
     section {
       background: #fff;
-      border-radius: 4px;
+
+      border-radius: 6px;
+
       padding: 20px;
+
       margin-bottom: 20px;
+
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       color: #0a8735;
       margin-bottom: 10px;
     }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+
+    /* =========================
+       TWO COLUMN
+    ========================== */
 
     .two-column {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
     }
+
     .two-column > div {
       flex: 1 1 280px;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 7px;
+    }
+
+
+    /* =========================
+       CONTACT BOX
+    ========================== */
 
     .contact-box {
       background: #f0fff5;
@@ -84,88 +175,255 @@ header-banner img {
     .contact-item {
       margin-bottom: 8px;
     }
+
     .contact-item span {
       font-weight: bold;
     }
 
+
+    /* =========================
+       FOOTER
+    ========================== */
+
     footer {
       text-align: center;
+
       padding: 15px;
+
       background: #0a8735;
       color: #fff;
+
       margin-top: 20px;
     }
 
-    @media (max-width: 600px) {
-      nav { justify-content: flex-start; }
+
+    /* =========================
+       TABLET
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      header {
+        height: 180px;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
     }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 600px) {
+
+      header {
+        height: 140px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 10px;
+        padding: 8px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .container {
+        width: 94%;
+        margin: 15px auto;
+      }
+
+      section {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 21px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+    }
+
   </style>
 </head>
+
+
 <body>
-  <!-- Header with your banner image -->
-  <header-banner="home">
-    <img src="/image logo 2.jpeg" alt="GVK Charitable & Educational Trust Banner" />
+
+
+  <!-- =========================
+       HEADER BANNER
+  ========================== -->
+
+  <header>
+    <img
+      src="/image logo 2.jpeg"
+      alt="GVK Charitable & Educational Trust Banner"
+    >
   </header>
 
-  <!-- Simple navigation -->
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
   <nav>
+
     <a href="index.html">About</a>
+
     <a href="programs.html">Programs</a>
+
     <a href="jobnotification.html">Job Notifications</a>
+
     <a href="Contact us.html">Contact</a>
+
     <a href="notification.html">Notification</a>
+
   </nav>
 
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
   <div class="container">
-    <!-- About section -->
+
+
+    <!-- ABOUT -->
+
     <section id="about">
+
       <h1>GVK Charitable &amp; Educational Trust</h1>
-      <p>
-       Vision</p>
-      <p style="text-align: justify;">To build a compassionate, enlightened, and inclusive society rooted in Indian cultural heritage, where education, health,
-        environmental responsibility, and social welfare empower every individual to live with dignity,
-        knowledge, and harmony, inspired by the principles of Bhagavad Ramanujulu.</p>
-      <p>Mission</p>
+
+      <h2>Vision</h2>
+
       <p style="text-align: justify;">
-        To serve the public good by promoting quality education, healthcare, and relief to the poor;
-        supporting wildlife and environmental awareness; preserving Indian culture, arts, and traditions; encouraging research, community participation, and youth development; 
-        and collaborating with like-minded organizations to foster holistic human development and sustainable social progress across India.
+        To build a compassionate, enlightened, and inclusive society rooted
+        in Indian cultural heritage, where education, health, environmental
+        responsibility, and social welfare empower every individual to live
+        with dignity, knowledge, and harmony, inspired by the principles of
+        Bhagavad Ramanujulu.
       </p>
+
+
+      <h2>Mission</h2>
+
+      <p style="text-align: justify;">
+        To serve the public good by promoting quality education, healthcare,
+        and relief to the poor; supporting wildlife and environmental
+        awareness; preserving Indian culture, arts, and traditions;
+        encouraging research, community participation, and youth development;
+        and collaborating with like-minded organizations to foster holistic
+        human development and sustainable social progress across India.
+      </p>
+
     </section>
 
-    <!-- Programs / activities -->
+
+    <!-- =========================
+         ACTIVITIES
+    ========================== -->
+
     <section id="programs">
+
       <h2>Our Activities</h2>
+
       <div class="two-column">
+
         <div>
+
           <ul>
-            <li>Educational support for students in need.</li>
-            <li>Scholarships and fee assistance for deserving learners.</li>
-            <li>Workshops, seminars, and training programs.</li>
+
+            <li>
+              Educational support for students in need.
+            </li>
+
+            <li>
+              Scholarships and fee assistance for deserving learners.
+            </li>
+
+            <li>
+              Workshops, seminars, and training programs.
+            </li>
+
           </ul>
+
         </div>
+
+
         <div>
+
           <ul>
-            <li>Cultural and sports activities for youth development.</li>
-            <li>Community outreach and charitable initiatives.</li>
-            <li>Collaboration with schools, colleges, and NGOs.</li>
+
+            <li>
+              Cultural and sports activities for youth development.
+            </li>
+
+            <li>
+              Community outreach and charitable initiatives.
+            </li>
+
+            <li>
+              Collaboration with schools, colleges, and NGOs.
+            </li>
+
           </ul>
+
         </div>
+
       </div>
+
     </section>
+
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
-    &copy; <span id="year"></span> GVK Charitable &amp; Educational Trust. All rights reserved.
+
+    &copy;
+    <span id="year"></span>
+    GVK Charitable &amp; Educational Trust.
+    All rights reserved.
+
   </footer>
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
-    // Auto update year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
   </script>
+
+
 </body>
 </html>
-
-
 
 
 
