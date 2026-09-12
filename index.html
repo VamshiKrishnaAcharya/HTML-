@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,58 +13,23 @@
   <style>
 
     /* =========================
-       BASIC RESET
+       RESET
     ========================== */
-    header {
-    width: 100%;
-    height: 220px;
-    background: #ffffff;
-    border-bottom: 4px solid #0a8735;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-}
-
-header img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-}
-
-nav {
-    width: 100%;
-    height: 52px;
-    background: #0a8735;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 30px;
-    padding: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #ffd200;
-}
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
       background: #f5f5f5;
       color: #333;
@@ -71,31 +38,35 @@ nav a:hover {
 
 
     /* =========================
-       WEBSITE HEADER / BANNER
+       HEADER / WEBSITE BANNER
     ========================== */
 
     header {
       width: 100%;
-      height: 220px;              /* REDUCED HEADER HEIGHT */
+      height: 230px;
+
       background: #ffffff;
+
       border-bottom: 4px solid #0a8735;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       overflow: hidden;
-      padding: 0;
+
+      display: block;
     }
 
     header img {
       width: 100%;
       height: 100%;
 
-      object-fit: contain;       /* SHOW COMPLETE IMAGE */
-      object-position: center;
-
       display: block;
+
+      /*
+        COVER fills the complete screen.
+        It removes the white space on left/right.
+      */
+      object-fit: cover;
+
+      object-position: center center;
     }
 
 
@@ -105,30 +76,47 @@ nav a:hover {
 
     nav {
       width: 100%;
+
+      min-height: 54px;
+
       background: #0a8735;
-      color: #fff;
-
-      min-height: 50px;
-
-      padding: 8px 15px;
 
       display: flex;
       justify-content: center;
       align-items: center;
 
-      gap: 25px;
-      flex-wrap: wrap;
+      gap: 35px;
+
+      padding: 8px 20px;
+
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+      position: relative;
+      z-index: 10;
     }
 
     nav a {
-      color: #fff;
+      color: #ffffff;
+
       text-decoration: none;
-      font-weight: bold;
+
       font-size: 16px;
+
+      font-weight: 600;
+
+      padding: 8px 10px;
+
+      border-radius: 4px;
+
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #ffd200;
+
+      background: rgba(255, 255, 255, 0.10);
+
+      transform: translateY(-1px);
     }
 
 
@@ -137,10 +125,12 @@ nav a:hover {
     ========================== */
 
     .container {
-      width: 95%;
-      max-width: 1100px;
+      width: calc(100% - 40px);
 
-      margin: 20px auto;
+      max-width: 1150px;
+
+      margin: 25px auto;
+
       padding: 0;
     }
 
@@ -150,33 +140,40 @@ nav a:hover {
     ========================== */
 
     section {
-      background: #fff;
+      width: 100%;
 
-      border-radius: 6px;
+      background: #ffffff;
 
-      padding: 20px;
+      border-radius: 8px;
 
-      margin-bottom: 20px;
+      padding: 25px;
 
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      margin-bottom: 22px;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
     h1,
     h2 {
       color: #0a8735;
-      margin-bottom: 10px;
+
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 28px;
+      font-size: 30px;
     }
 
     h2 {
       font-size: 24px;
+
+      margin-top: 15px;
     }
 
     p {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+
+      font-size: 16px;
     }
 
 
@@ -186,20 +183,22 @@ nav a:hover {
 
     .two-column {
       display: flex;
+
       flex-wrap: wrap;
-      gap: 20px;
+
+      gap: 30px;
     }
 
     .two-column > div {
-      flex: 1 1 280px;
+      flex: 1 1 300px;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 22px;
     }
 
     li {
-      margin-bottom: 7px;
+      margin-bottom: 9px;
     }
 
 
@@ -209,8 +208,12 @@ nav a:hover {
 
     .contact-box {
       background: #f0fff5;
+
       border-left: 4px solid #0a8735;
-      padding: 15px;
+
+      padding: 16px;
+
+      border-radius: 4px;
     }
 
     .contact-item {
@@ -227,14 +230,19 @@ nav a:hover {
     ========================== */
 
     footer {
+      width: 100%;
+
       text-align: center;
 
-      padding: 15px;
+      padding: 18px 15px;
 
       background: #0a8735;
-      color: #fff;
 
-      margin-top: 20px;
+      color: #ffffff;
+
+      margin-top: 25px;
+
+      font-size: 14px;
     }
 
 
@@ -245,21 +253,42 @@ nav a:hover {
     @media (max-width: 768px) {
 
       header {
-        height: 180px;
+        height: 190px;
       }
 
       nav {
-        gap: 15px;
+        gap: 12px;
+
+        padding: 8px 10px;
       }
 
       nav a {
         font-size: 14px;
+
+        padding: 6px 7px;
+      }
+
+      .container {
+        width: calc(100% - 30px);
+
+        margin: 18px auto;
+      }
+
+      section {
+        padding: 20px;
       }
 
       h1 {
-        font-size: 24px;
+        font-size: 25px;
       }
 
+      h2 {
+        font-size: 21px;
+      }
+
+      p {
+        font-size: 15px;
+      }
     }
 
 
@@ -270,26 +299,39 @@ nav a:hover {
     @media (max-width: 600px) {
 
       header {
-        height: 140px;
+        height: 145px;
+      }
+
+      header img {
+        object-fit: cover;
+
+        object-position: center center;
       }
 
       nav {
-        justify-content: center;
-        gap: 10px;
-        padding: 8px;
+        min-height: auto;
+
+        gap: 5px;
+
+        padding: 8px 5px;
       }
 
       nav a {
-        font-size: 13px;
+        font-size: 12px;
+
+        padding: 5px 6px;
       }
 
       .container {
-        width: 94%;
+        width: calc(100% - 20px);
+
         margin: 15px auto;
       }
 
       section {
-        padding: 15px;
+        padding: 16px;
+
+        border-radius: 6px;
       }
 
       h1 {
@@ -297,29 +339,69 @@ nav a:hover {
       }
 
       h2 {
-        font-size: 20px;
+        font-size: 19px;
       }
 
+      p {
+        font-size: 14px;
+
+        text-align: justify;
+      }
+
+      .two-column {
+        gap: 10px;
+      }
+
+      footer {
+        font-size: 13px;
+      }
+    }
+
+
+    /* =========================
+       VERY SMALL MOBILE
+    ========================== */
+
+    @media (max-width: 400px) {
+
+      header {
+        height: 125px;
+      }
+
+      nav {
+        gap: 3px;
+      }
+
+      nav a {
+        font-size: 11px;
+
+        padding: 4px 5px;
+      }
+
+      .container {
+        width: calc(100% - 12px);
+      }
     }
 
   </style>
-</head>
 
+</head>
 
 <body>
 
-
   <!-- =========================
-       HEADER BANNER
+       WEBSITE HEADER
   ========================== -->
 
   <header>
-    <img
-      src="/image logo 2.jpeg"
-      alt="GVK Charitable & Educational Trust Banner"
-    >
-  </header>
 
+```
+<img
+  src="/image logo 2.jpeg"
+  alt="GVK Charitable & Educational Trust Banner">
+```
+
+  </header>
 
   <!-- =========================
        NAVIGATION
@@ -327,115 +409,121 @@ nav a:hover {
 
   <nav>
 
-    <a href="index.html">About</a>
+```
+<a href="index.html">About</a>
 
-    <a href="programs.html">Programs</a>
+<a href="programs.html">Programs</a>
 
-    <a href="jobnotification.html">Job Notifications</a>
+<a href="jobnotification.html">Job Notifications</a>
 
-    <a href="Contact us.html">Contact</a>
+<a href="Contact us.html">Contact</a>
 
-    <a href="notification.html">Notification</a>
+<a href="notification.html">Notification</a>
+```
 
   </nav>
-
 
   <!-- =========================
        MAIN CONTENT
   ========================== -->
 
-  <div class="container">
+  <main class="container">
+
+```
+<!-- =========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+  <h1>GVK Charitable &amp; Educational Trust</h1>
+
+  <h2>Vision</h2>
+
+  <p style="text-align: justify;">
+
+    To build a compassionate, enlightened, and inclusive society rooted
+    in Indian cultural heritage, where education, health, environmental
+    responsibility, and social welfare empower every individual to live
+    with dignity, knowledge, and harmony, inspired by the principles of
+    Bhagavad Ramanujulu.
+
+  </p>
 
 
-    <!-- ABOUT -->
+  <h2>Mission</h2>
 
-    <section id="about">
+  <p style="text-align: justify;">
 
-      <h1>GVK Charitable &amp; Educational Trust</h1>
+    To serve the public good by promoting quality education, healthcare,
+    and relief to the poor; supporting wildlife and environmental
+    awareness; preserving Indian culture, arts, and traditions;
+    encouraging research, community participation, and youth development;
+    and collaborating with like-minded organizations to foster holistic
+    human development and sustainable social progress across India.
 
-      <h2>Vision</h2>
+  </p>
 
-      <p style="text-align: justify;">
-        To build a compassionate, enlightened, and inclusive society rooted
-        in Indian cultural heritage, where education, health, environmental
-        responsibility, and social welfare empower every individual to live
-        with dignity, knowledge, and harmony, inspired by the principles of
-        Bhagavad Ramanujulu.
-      </p>
-
-
-      <h2>Mission</h2>
-
-      <p style="text-align: justify;">
-        To serve the public good by promoting quality education, healthcare,
-        and relief to the poor; supporting wildlife and environmental
-        awareness; preserving Indian culture, arts, and traditions;
-        encouraging research, community participation, and youth development;
-        and collaborating with like-minded organizations to foster holistic
-        human development and sustainable social progress across India.
-      </p>
-
-    </section>
+</section>
 
 
-    <!-- =========================
-         ACTIVITIES
-    ========================== -->
+<!-- =========================
+     ACTIVITIES
+========================== -->
 
-    <section id="programs">
+<section id="programs">
 
-      <h2>Our Activities</h2>
+  <h2>Our Activities</h2>
 
-      <div class="two-column">
+  <div class="two-column">
 
-        <div>
+    <div>
 
-          <ul>
+      <ul>
 
-            <li>
-              Educational support for students in need.
-            </li>
+        <li>
+          Educational support for students in need.
+        </li>
 
-            <li>
-              Scholarships and fee assistance for deserving learners.
-            </li>
+        <li>
+          Scholarships and fee assistance for deserving learners.
+        </li>
 
-            <li>
-              Workshops, seminars, and training programs.
-            </li>
+        <li>
+          Workshops, seminars, and training programs.
+        </li>
 
-          </ul>
+      </ul>
 
-        </div>
+    </div>
 
 
-        <div>
+    <div>
 
-          <ul>
+      <ul>
 
-            <li>
-              Cultural and sports activities for youth development.
-            </li>
+        <li>
+          Cultural and sports activities for youth development.
+        </li>
 
-            <li>
-              Community outreach and charitable initiatives.
-            </li>
+        <li>
+          Community outreach and charitable initiatives.
+        </li>
 
-            <li>
-              Collaboration with schools, colleges, and NGOs.
-            </li>
+        <li>
+          Collaboration with schools, colleges, and NGOs.
+        </li>
 
-          </ul>
+      </ul>
 
-        </div>
-
-      </div>
-
-    </section>
-
+    </div>
 
   </div>
 
+</section>
+```
+
+  </main>
 
   <!-- =========================
        FOOTER
@@ -443,13 +531,14 @@ nav a:hover {
 
   <footer>
 
-    &copy;
-    <span id="year"></span>
-    GVK Charitable &amp; Educational Trust.
-    All rights reserved.
+```
+&copy;
+<span id="year"></span>
+GVK Charitable &amp; Educational Trust.
+All rights reserved.
+```
 
   </footer>
-
 
   <!-- =========================
        JAVASCRIPT
@@ -462,15 +551,6 @@ nav a:hover {
 
   </script>
 
-
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
