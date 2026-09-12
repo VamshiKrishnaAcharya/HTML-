@@ -1,0 +1,443 @@
+/* =========================
+   RESET
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #f5f5f5;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HEADER / WEBSITE BANNER
+========================== */
+
+header {
+  width: 100%;
+  height: 230px;
+  background: #ffffff;
+  border-bottom: 4px solid #0a8735;
+  overflow: hidden;
+  display: block;
+}
+
+header img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* =========================
+   NAVIGATION
+========================== */
+
+nav {
+  width: 100%;
+  min-height: 34px;
+  background: #0a8735;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 55px;
+  padding: 8px 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd200;
+  background: rgba(255, 255, 255, 0.10);
+  transform: translateY(-1px);
+}
+
+nav a.active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================
+   MAIN CONTAINER
+========================== */
+
+.container {
+  width: calc(100% - 40px);
+  max-width: 1150px;
+  margin: 25px auto;
+  padding: 0;
+}
+
+/* =========================
+   CONTENT SECTIONS
+========================== */
+
+section {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1,
+h2,
+h3 {
+  color: #0a8735;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 15px;
+}
+
+h3 {
+  font-size: 19px;
+  margin-top: 10px;
+}
+
+p {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-top: -8px;
+  margin-bottom: 18px;
+}
+
+/* =========================
+   TWO COLUMN
+========================== */
+
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.two-column > div {
+  flex: 1 1 300px;
+}
+
+ul {
+  padding-left: 22px;
+}
+
+li {
+  margin-bottom: 9px;
+}
+
+/* =========================
+   CARDS (Programs page)
+========================== */
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 280px;
+  background: #f0fff5;
+  border-left: 4px solid #0a8735;
+  border-radius: 4px;
+  padding: 18px;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* =========================
+   TABLE (Job Notifications page)
+========================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 15px;
+}
+
+th {
+  background: #0a8735;
+  color: #ffffff;
+}
+
+tr:nth-child(even) td {
+  background: #f7fdf9;
+}
+
+.notice-box {
+  background: #fff8e6;
+  border-left: 4px solid #ffb400;
+  padding: 14px 16px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+/* =========================
+   NOTIFICATIONS / NOTICES LIST
+========================== */
+
+.notice-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.notice-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.notice-list li:last-child {
+  border-bottom: none;
+}
+
+.notice-date {
+  display: inline-block;
+  min-width: 100px;
+  color: #0a8735;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* =========================
+   CONTACT BOX
+========================== */
+
+.contact-box {
+  background: #f0fff5;
+  border-left: 4px solid #0a8735;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.contact-item {
+  margin-bottom: 8px;
+}
+
+.contact-item span {
+  font-weight: bold;
+}
+
+/* =========================
+   CONTACT FORM
+========================== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: -8px;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid #0a8735;
+  outline-offset: 1px;
+}
+
+button.submit-btn {
+  align-self: flex-start;
+  background: #0a8735;
+  color: #ffffff;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 11px 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button.submit-btn:hover {
+  background: #086b2a;
+}
+
+/* =========================
+   FOOTER
+========================== */
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 18px 15px;
+  background: #0a8735;
+  color: #ffffff;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+/* =========================
+   TABLET
+========================== */
+
+@media (max-width: 768px) {
+  header {
+    height: 190px;
+  }
+
+  nav {
+    gap: 12px;
+    padding: 8px 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 6px 7px;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+    margin: 18px auto;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+  header {
+    height: 145px;
+  }
+
+  nav {
+    min-height: auto;
+    gap: 5px;
+    padding: 8px 5px;
+  }
+
+  nav a {
+    font-size: 12px;
+    padding: 5px 6px;
+  }
+
+  .container {
+    width: calc(100% - 20px);
+    margin: 15px auto;
+  }
+
+  section {
+    padding: 16px;
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 21px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .two-column {
+    gap: 10px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================== */
+
+@media (max-width: 400px) {
+  header {
+    height: 125px;
+  }
+
+  nav {
+    gap: 3px;
+  }
+
+  nav a {
+    font-size: 11px;
+    padding: 4px 5px;
+  }
+
+  .container {
+    width: calc(100% - 12px);
+  }
+}
