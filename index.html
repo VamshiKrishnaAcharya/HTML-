@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="gvk.jpg">
+  <link rel="stylesheet" href="styles.css">
+  <title>GVK Charitable & Educational Trust</title>
+</head>
+<body>
 
+  <!-- WEBSITE HEADER -->
+  <header>
+    <img src="image logo 2.jpeg" alt="GVK Charitable & Educational Trust Banner">
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="active">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="jobnotification.html">Job Notifications</a>
+    <a href="contact.html">Contact</a>
+    <a href="notification.html">Notification</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h1>GVK Charitable &amp; Educational Trust</h1>
+
+      <h2>Vision</h2>
+      <p style="text-align: justify;">
+        To build a compassionate, enlightened, and inclusive society rooted
+        in Indian cultural heritage, where education, health, environmental
+        responsibility, and social welfare empower every individual to live
+        with dignity, knowledge, and harmony, inspired by the principles of
+        Bhagavad Ramanujulu.
+      </p>
+
+      <h2>Mission</h2>
+      <p style="text-align: justify;">
+        To serve the public good by promoting quality education, healthcare,
+        and relief to the poor; supporting wildlife and environmental
+        awareness; preserving Indian culture, arts, and traditions;
+        encouraging research, community participation, and youth development;
+        and collaborating with like-minded organizations to foster holistic
+        human development and sustainable social progress across India.
+      </p>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section id="programs">
+      <h2>Our Activities</h2>
+      <div class="two-column">
+        <div>
+          <ul>
+            <li>Educational support for students in need.</li>
+            <li>Scholarships and fee assistance for deserving learners.</li>
+            <li>Workshops, seminars, and training programs.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Cultural and sports activities for youth development.</li>
+            <li>Community outreach and charitable initiatives.</li>
+            <li>Collaboration with schools, colleges, and NGOs.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 16px;">
+        <a href="programs.html" style="color:#0a8735; font-weight:600;">See all our programs in detail &rarr;</a>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; <span id="year"></span> GVK Charitable &amp; Educational Trust. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
