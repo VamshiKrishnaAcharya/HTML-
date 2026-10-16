@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="te" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ఉత్తరాంధ్ర ప్రాంతీయ ఆధ్యాత్మిక అంత్యాక్షరి పోటీలు – 2026 | Spiritual Antyakshari</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Telugu & Sanskrit aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gautami&family=Cinzel:wght@500;700;900&family=Ramabhadra&family=Suranna&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            vedic: {
+              maroon: '#4a0e17',
+              deepRed: '#781d22',
+              saffron: '#e65100',
+              gold: '#d4af37',
+              brightGold: '#f9d342',
+              cream: '#fffdf7',
+              darkBg: '#1f0d0e',
+              borderGold: 'rgba(212, 175, 55, 0.4)'
+            }
+          },
+          fontFamily: {
+            telugu: ['Ramabhadra', 'Suranna', 'sans-serif'],
+            serifTitle: ['Cinzel', 'serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Decorative Patterns & Animations */
+    .bg-rangoli {
+      background-color: #2a080c;
+      background-image: radial-gradient(#d4af37 0.75px, transparent 0.75px), radial-gradient(#d4af37 0.75px, #2a080c 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      background-opacity: 0.15;
+    }
+    
+    .gold-border {
+      border: 2px solid #d4af37;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    }
+    
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #ffe082 0%, #d4af37 50%, #ffb300 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .temple-arch {
+      border-radius: 40px 40px 16px 16px;
+    }
+
+    /* Print styles for Registration Slip */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printArea, #printArea * {
+        visibility: visible;
+      }
+      #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#180709] text-amber-50 font-body selection:bg-amber-600 selection:text-white min-h-screen flex flex-col">
+
+  <!-- Top Announcement Bar with Namam & Language Toggle -->
+  <header class="sticky top-0 z-50 bg-[#25090d]/95 backdrop-blur-md border-b border-amber-600/30 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <!-- Sacred Thiruman / Namam Icon -->
+        <span class="inline-flex items-center justify-center bg-amber-950/80 p-1.5 rounded-full border border-amber-500/50 shadow">
+          <svg class="w-6 h-6 text-amber-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L10 9V20H14V9L12 2Z" fill="#ff4d4d"/>
+            <path d="M7 6L8.5 10V18H10V9L8 5L7 6Z" fill="#fefefe"/>
+            <path d="M17 6L15.5 10V18H14V9L16 5L17 6Z" fill="#fefefe"/>
+            <path d="M7 18C7 19.5 9.2 21 12 21C14.8 21 17 19.5 17 18H7Z" fill="#fefefe"/>
+          </svg>
+        </span>
+        <div class="leading-tight">
+          <p class="text-xs tracking-widest text-amber-300 uppercase font-semibold">శ్రీమన్నారాయణాయ నమః</p>
+          <p class="text-xs text-amber-200/70 hidden sm:block">GVK Educational Trust & Sri Vaishnava Seva Sangam</p>
+        </div>
+      </div>
+
+      <!-- Controls: Audio Ambience + Bilingual Toggle + Register Quick Btn -->
+      <div class="flex items-center space-x-2 sm:space-x-4">
+        <!-- Tanpura / Ambient Chant Audio Toggle -->
+        <button id="audioToggleBtn" title="Play Sacred Tanpura Drone" onclick="toggleAmbience()" class="px-2.5 py-1.5 rounded-lg border border-amber-500/40 bg-amber-950/40 text-amber-300 hover:bg-amber-900/60 transition flex items-center text-xs gap-1.5">
+          <i id="audioIcon" class="fas fa-volume-mute"></i>
+          <span class="hidden md:inline" id="audioLabel">ఓం నాదం</span>
+        </button>
+
+        <!-- Bilingual Toggle -->
+        <button onclick="toggleLanguage()" class="px-3 py-1 rounded-full text-xs font-bold border border-amber-400 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white shadow">
+          <i class="fas fa-language mr-1"></i>
+          <span id="langBtnText">English లో చూడండి</span>
+        </button>
+
+        <!-- Direct Register CTA -->
+        <a href="#register" class="hidden sm:inline-block px-4 py-1.5 rounded-lg text-xs font-bold bg-amber-400 hover:bg-amber-300 text-amber-950 shadow-md transform hover:-translate-y-0.5 transition">
+          నమోదు చేసుకోండి
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-rangoli pt-12 pb-16 px-4 sm:px-6 overflow-hidden border-b border-amber-500/20">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#20080b]/80 to-[#180709] pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto text-center space-y-6">
+      <!-- Sacred Tagline -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300 text-xs sm:text-sm font-semibold tracking-wide">
+        <i class="fas fa-om text-amber-400 text-base"></i>
+        <span>"ధర్మో రక్షతి రక్షితః" &bull; "వేద జ్ఞానం – సంస్కృతి పరిరక్షణ – విద్యార్థుల ప్రతిభ వికాసం"</span>
+      </div>
+
+      <!-- Main Title -->
+      <div class="space-y-3">
+        <h2 class="text-amber-400 tracking-wider text-sm sm:text-lg font-serifTitle uppercase font-bold">
+          ఉత్తరాంధ్ర ప్రాంతీయ (విశాఖపట్నం, విజయనగరం & శ్రీకాకుళం)
+        </h2>
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold font-telugu gold-gradient-text drop-shadow-md leading-tight">
+          ఆధ్యాత్మిక అంత్యాక్షరి పోటీలు – 2026
+        </h1>
+        <p class="text-sm sm:text-lg text-amber-200/90 font-medium max-w-3xl mx-auto italic">
+          శ్రీమద్రామాయణం • శ్రీమద్భాగవతం • విష్ణు సహస్రనామం • వేద విద్య
+        </p>
+      </div>
+
+      <!-- Key Details Badges Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto pt-4">
+        <div class="p-3 bg-amber-950/60 rounded-xl border border-amber-500/30 text-center">
+          <p class="text-xs text-amber-300/80 font-semibold"><i class="far fa-calendar-alt mr-1"></i> ప్రతిపాదిత తేదీలు</p>
+          <p class="text-base font-bold text-white mt-1">2026 నవంబర్ 3వ వారం</p>
+          <p class="text-[11px] text-amber-300">November 3rd Week 2026</p>
+        </div>
+
+        <div class="p-3 bg-amber-950/60 rounded-xl border border-amber-500/30 text-center">
+          <p class="text-xs text-amber-300/80 font-semibold"><i class="fas fa-map-marker-alt mr-1"></i> వేదిక (Venue)</p>
+          <p class="text-base font-bold text-white mt-1">విజయనగరం</p>
+          <p class="text-[11px] text-amber-300">శ్రీ వైష్ణవ సేవ సంగం</p>
+        </div>
+
+        <div class="p-3 bg-amber-950/60 rounded-xl border border-amber-500/30 text-center">
+          <p class="text-xs text-amber-300/80 font-semibold"><i class="fas fa-trophy mr-1"></i> నగదు బహుమతులు</p>
+          <p class="text-base font-bold text-amber-400 mt-1">రూ. 12,000/- +</p>
+          <p class="text-[11px] text-amber-300">First ₹8K, Second ₹4K + 5 Prizes</p>
+        </div>
+
+        <div class="p-3 bg-amber-950/60 rounded-xl border border-amber-500/30 text-center">
+          <p class="text-xs text-amber-300/80 font-semibold"><i class="fas fa-users mr-1"></i> అర్హత & కోటా</p>
+          <p class="text-base font-bold text-white mt-1">20 బృందాలు మాత్రమే</p>
+          <p class="text-[11px] text-amber-300">వయస్సు: &le;18 సం. (5 per team)</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 pt-4">
+        <a href="#register" class="px-6 py-3.5 rounded-xl font-bold text-amber-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:brightness-110 shadow-lg shadow-amber-900/40 transform hover:-translate-y-0.5 transition flex items-center gap-2">
+          <i class="fas fa-edit"></i>
+          <span>బృందం నమోదు చేయండి (రూ.500)</span>
+        </a>
+        <a href="#rules" class="px-6 py-3.5 rounded-xl font-semibold text-amber-200 bg-amber-950/90 border border-amber-500/50 hover:bg-amber-900/80 transition flex items-center gap-2">
+          <i class="fas fa-scroll"></i>
+          <span>నియమావళి & స్కోరింగ్ విధానం</span>
+        </a>
+        <a href="#quizPractice" class="px-5 py-3.5 rounded-xl font-semibold text-amber-300 bg-amber-900/40 border border-amber-600/40 hover:bg-amber-900/70 transition flex items-center gap-2">
+          <i class="fas fa-vihara"></i>
+          <span>అంత్యాక్షరి మోడల్ ప్రాక్టీస్</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objective & Invitation Letter (ఆహ్వాన పత్రం & లక్ష్యం) -->
+  <section class="py-14 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-12 gap-8 items-center">
+      
+      <!-- Invitation Card (Styled like an ancient Patram) -->
+      <div class="md:col-span-7 bg-[#230b0e] p-6 sm:p-8 rounded-3xl border-2 border-amber-500/40 shadow-2xl relative">
+        <div class="absolute -top-3 left-8 px-4 py-1 bg-gradient-to-r from-amber-500 to-amber-700 text-amber-950 text-xs font-bold rounded-full uppercase tracking-wider">
+          ఆహ్వాన పత్రం (Official Invitation)
+        </div>
+
+        <div class="text-center pb-4 border-b border-amber-500/30">
+          <h3 class="text-xl font-bold text-amber-300 font-telugu">"శ్రీమన్నారాయణాయ నమః"</h3>
+          <p class="text-sm text-amber-200/80 mt-1">ప్రియమైన వేద పాఠశాలల ప్రధానాచార్యులు, గురువులు మరియు ప్రియమైన విద్యార్థులకు,</p>
+        </div>
+
+        <div class="mt-5 space-y-4 text-sm sm:text-base leading-relaxed text-amber-100">
+          <p>
+            భారతీయ సనాతన ధర్మ సంప్రదాయానికి మూలస్తంభాలైన <strong>శ్రీ విష్ణు సహస్రనామం, శ్రీమద్రామాయణం, శ్రీమద్భాగవతం</strong> మరియు <strong>వేద విద్య</strong> ఆధారంగా నిర్వహిస్తున్న ఉత్తరాంధ్ర ప్రాంతీయ ఆధ్యాత్మిక అంత్యాక్షరి పోటీలకు మీ విద్యాసంస్థను మరియు విద్యార్థులను హృదయపూర్వకంగా ఆహ్వానిస్తున్నాము.
+          </p>
+          <p class="p-3 bg-amber-950/60 rounded-xl border-l-4 border-amber-500 text-amber-200 italic text-sm">
+            "ఈ కార్యక్రమం పోటీ మాత్రమే కాదు; విద్యార్థులలో వేద జ్ఞానం, భక్తి, జ్ఞాపకశక్తి, వాక్పటిమ మరియు సనాతన ధర్మ విలువలను పెంపొందించే ఒక సాంస్కృతిక జ్ఞాన యజ్ఞం."
+          </p>
+          <p>
+            ఈ మహత్తర పోటీలలో పాల్గొని కార్యక్రమాన్ని దిగ్విజయం చేయవలసిందిగా మనవి చేయుచున్నాము.
+          </p>
+          <div class="pt-4 flex justify-between items-end border-t border-amber-500/20 text-xs text-amber-300/90">
+            <div>
+              <p class="font-bold text-white">జీవీకే ఎడ్యుటేషనల్ ట్రస్ట్</p>
+              <p>మాధవధార, విశాఖపట్నం</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-white">శ్రీ వైష్ణవ సేవ సంగం</p>
+              <p>పూల్‌బాగ్, విజయనగరం</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objectives Card -->
+      <div class="md:col-span-5 space-y-4">
+        <div class="p-6 bg-gradient-to-br from-amber-950/70 to-[#2f0f13] rounded-3xl border border-amber-500/30 shadow-xl">
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 text-xl">
+              <i class="fas fa-dharmachakra"></i>
+            </div>
+            <h3 class="text-xl font-bold text-amber-300 font-telugu">కార్యక్రమ ముఖ్య ఉద్దేశ్యాలు</h3>
+          </div>
+          <ul class="space-y-3.5 text-sm text-amber-100/90">
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+              <span>శ్రీమద్రామాయణం, శ్రీమద్భాగవతం, విష్ణు సహస్రనామం మరియు వేద విద్య అధ్యయనాన్ని ప్రోత్సహించడం.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+              <span>విద్యార్థుల్లో అద్భుత జ్ఞాపకశక్తి, శ్లోక పఠన వాక్చాతుర్యం మరియు ఆధ్యాత్మిక విజ్ఞానాన్ని పెంపొందించడం.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+              <span>సనాతన వేద సంస్కృతిని పరిరక్షించి భావితరాల యువతకు అందించడం.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+              <span>ఉత్తరాంధ్ర వేద పాఠశాలలు, గురుకులాలు & సంస్కృత విద్యాసంస్థల మధ్య పరస్పర సత్స్పర్థ, స్నేహ భావాన్ని చాటడం.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-amber-900/30 rounded-2xl border border-amber-500/20 text-xs text-amber-200 flex items-center gap-3">
+          <i class="fas fa-info-circle text-amber-400 text-2xl flex-shrink-0"></i>
+          <div>
+            <strong>అర్హత నిబంధన:</strong> విశాఖపట్నం, విజయనగరం మరియు శ్రీకాకుళం జిల్లాల్లోని వేద పాఠశాలలు, గురుకులాలు, సంస్కృత పాఠశాలలకు చెందిన 18 సంవత్సరాల లోపు విద్యార్థులు మాత్రమే అర్హులు.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Competition Structure & Visual Tournament Flow -->
+  <section class="py-14 bg-gradient-to-b from-[#180709] via-[#21090d] to-[#180709] border-y border-amber-600/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-amber-300 font-telugu">పోటీ నిర్వహణ విధానం (Tournament Format)</h2>
+        <p class="text-sm text-amber-200/80 mt-2">మొత్తం 20 బృందాలు &bull; 100 మంది విద్యార్థులు &bull; 3 దశల పోటీ ప్రయాణం</p>
+      </div>
+
+      <!-- Tournament Bracket Steps Grid -->
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- Step 1: League Stage -->
+        <div class="bg-amber-950/40 p-5 rounded-2xl border border-amber-500/30 relative flex flex-col justify-between">
+          <div class="absolute -top-3 left-4 bg-amber-500 text-amber-950 font-bold px-3 py-0.5 rounded-full text-xs">
+            దశ 1 : గ్రూప్ లీగ్
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white mt-2 mb-2 flex items-center justify-between">
+              <span>మొదటి దశ (20 Teams)</span>
+              <span class="text-xs text-amber-400 bg-amber-900/60 px-2 py-0.5 rounded">3 గంటల రౌండ్</span>
+            </h4>
+            <p class="text-xs text-amber-200/90 mb-4">మొత్తం 20 బృందాలు 2 సమూహాలుగా పోటీపడతాయి:</p>
+
+            <div class="space-y-2.5">
+              <div class="p-3 rounded-lg bg-black/40 border border-amber-500/20">
+                <div class="flex justify-between items-center text-sm font-semibold">
+                  <span class="text-amber-300">గ్రూప్ – A</span>
+                  <span class="text-xs bg-amber-800/60 px-2 py-0.5 rounded">10 బృందాలు</span>
+                </div>
+                <p class="text-[11px] text-amber-200/70 mt-1">టాప్ 4 బృందాలు తదుపరి రౌండ్‌కు ఎంపిక</p>
+              </div>
+
+              <div class="p-3 rounded-lg bg-black/40 border border-amber-500/20">
+                <div class="flex justify-between items-center text-sm font-semibold">
+                  <span class="text-amber-300">గ్రూప్ – B</span>
+                  <span class="text-xs bg-amber-800/60 px-2 py-0.5 rounded">10 బృందాలు</span>
+                </div>
+                <p class="text-[11px] text-amber-200/70 mt-1">టాప్ 4 బృందాలు తదుపరి రౌండ్‌కు ఎంపిక</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-amber-500/20 text-center text-xs font-bold text-amber-400">
+            ఫలితం: 8 బృందాలు అర్హత (Super-8)
+          </div>
+        </div>
+
+        <!-- Step 2: Super 8 to Super 4 -->
+        <div class="bg-amber-950/50 p-5 rounded-2xl border-2 border-amber-500/50 relative flex flex-col justify-between shadow-lg">
+          <div class="absolute -top-3 left-4 bg-amber-400 text-amber-950 font-bold px-3 py-0.5 rounded-full text-xs">
+            దశ 2 : సూపర్ 8 (Super-8)
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white mt-2 mb-2 flex items-center justify-between">
+              <span>రెండవ దశ (8 Teams)</span>
+              <span class="text-xs text-amber-300 bg-amber-900/60 px-2 py-0.5 rounded">నాకౌట్ / సెమీస్</span>
+            </h4>
+            <p class="text-xs text-amber-200/90 mb-4">గ్రూప్-A & B నుండి వచ్చిన అత్యుత్తమ 8 జట్ల మధ్య పోరు:</p>
+
+            <div class="space-y-2.5">
+              <div class="p-3 rounded-lg bg-amber-900/30 border border-amber-400/30">
+                <p class="text-xs text-amber-200 font-semibold">గ్రూప్-A ఉత్తమ 2 బృందాలు</p>
+                <div class="h-1.5 w-full bg-amber-700/50 rounded-full my-1.5 overflow-hidden">
+                  <div class="h-full bg-amber-400 w-2/4"></div>
+                </div>
+                <span class="text-[10px] text-amber-300">సెమీఫైనల్ అర్హత</span>
+              </div>
+
+              <div class="p-3 rounded-lg bg-amber-900/30 border border-amber-400/30">
+                <p class="text-xs text-amber-200 font-semibold">గ్రూప్-B ఉత్తమ 2 బృందాలు</p>
+                <div class="h-1.5 w-full bg-amber-700/50 rounded-full my-1.5 overflow-hidden">
+                  <div class="h-full bg-amber-400 w-2/4"></div>
+                </div>
+                <span class="text-[10px] text-amber-300">సెమీఫైనల్ అర్హత</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-amber-500/20 text-center text-xs font-bold text-amber-300">
+            ఫలితం: 4 బృందాలు అర్హత (Super-4)
+          </div>
+        </div>
+
+        <!-- Step 3: Grand Finale -->
+        <div class="bg-gradient-to-b from-amber-900/60 to-amber-950/80 p-5 rounded-2xl border-2 border-amber-400 relative flex flex-col justify-between shadow-xl">
+          <div class="absolute -top-3 left-4 bg-amber-300 text-amber-950 font-bold px-3 py-0.5 rounded-full text-xs">
+            తుది దశ : గ్రాండ్ ఫైనల్స్
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-amber-200 mt-2 mb-2 flex items-center justify-between">
+              <span>Super-4 &rarr; ఫైనల్</span>
+              <span class="text-xs bg-amber-500 text-amber-950 px-2 py-0.5 rounded font-bold">విజేత పోరు</span>
+            </h4>
+            <p class="text-xs text-amber-200/90 mb-4">ఉత్తమ 4 బృందాల మధ్య తీవ్రమైన ఆధ్యాత్మిక శ్లోక సమరం:</p>
+
+            <div class="space-y-3">
+              <div class="p-3 bg-amber-950/90 rounded-xl border border-amber-400/40 text-center">
+                <p class="text-xs text-amber-300 uppercase tracking-widest font-semibold">కప్ మరియు విజేత</p>
+                <p class="text-lg font-bold text-white flex items-center justify-center gap-2 mt-1">
+                  <i class="fas fa-crown text-amber-400"></i> విజేత (Winner)
+                </p>
+                <span class="text-xs text-emerald-400 font-bold">₹8,000/- బహుమతి</span>
+              </div>
+
+              <div class="p-3 bg-amber-950/90 rounded-xl border border-amber-400/40 text-center">
+                <p class="text-xs text-amber-300 uppercase tracking-widest font-semibold">ద్వితీయ స్థానం</p>
+                <p class="text-base font-bold text-white flex items-center justify-center gap-2 mt-0.5">
+                  <i class="fas fa-medal text-slate-300"></i> రన్నరప్ (Runner-up)
+                </p>
+                <span class="text-xs text-amber-300 font-bold">₹4,000/- బహుమతి</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-amber-500/20 text-center text-xs font-bold text-amber-300">
+            5 ప్రోత్సాహక బహుమతులు & సర్టిఫికేట్లు
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Prize Pool Showcase -->
+      <div class="mt-12 bg-black/40 p-6 sm:p-8 rounded-3xl border border-amber-500/30">
+        <h3 class="text-center text-xl font-bold text-amber-300 font-telugu mb-6 flex items-center justify-center gap-2">
+          <i class="fas fa-award text-amber-400"></i>
+          <span>గౌరవ బహుమతుల వివరాలు (Prizes & Honors)</span>
+        </h3>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-gradient-to-br from-amber-900/60 to-black border border-amber-400/40 flex items-center gap-4">
+            <div class="text-3xl text-amber-400">🥇</div>
+            <div>
+              <p class="text-xs text-amber-300 uppercase font-semibold">ప్రథమ బహుమతి (1st Prize)</p>
+              <p class="text-2xl font-bold text-white">రూ. 8,000/-</p>
+              <p class="text-[11px] text-amber-200/70">+ ప్రతిభ ట్రోఫీ & సర్టిఫికెట్లు</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-br from-amber-900/60 to-black border border-amber-400/40 flex items-center gap-4">
+            <div class="text-3xl text-slate-300">🥈</div>
+            <div>
+              <p class="text-xs text-amber-300 uppercase font-semibold">ద్వితీయ బహుమతి (2nd Prize)</p>
+              <p class="text-2xl font-bold text-white">రూ. 4,000/-</p>
+              <p class="text-[11px] text-amber-200/70">+ రన్నరప్ ట్రోఫీ & సర్టిఫికెట్లు</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gradient-to-br from-amber-900/60 to-black border border-amber-400/40 flex items-center gap-4">
+            <div class="text-3xl text-amber-500">📜</div>
+            <div>
+              <p class="text-xs text-amber-300 uppercase font-semibold">ప్రోత్సాహకాలు & ధృవపత్రాలు</p>
+              <p class="text-lg font-bold text-white">5 ప్రోత్సాహక బహుమతులు</p>
+              <p class="text-[11px] text-amber-200/70">పాల్గొన్న ప్రతి విద్యార్థికి సర్టిఫికెట్</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Spiritual Antyakshari Practice Simulator -->
+  <section id="quizPractice" class="py-14 px-4 sm:px-6 max-w-4xl mx-auto">
+    <div class="bg-[#240b0e] p-6 sm:p-8 rounded-3xl border border-amber-500/40 shadow-2xl relative overflow-hidden">
+      
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950 px-2.5 py-1 rounded-full border border-amber-500/30">
+            <i class="fas fa-play-circle mr-1"></i> శ్లోక అంత్యాక్షరి మోడల్ డెమో
+          </span>
+          <h3 class="text-xl sm:text-2xl font-bold text-white font-telugu mt-1">అంత్యాక్షరి ఎలా సాగుతుందో చూడండి</h3>
+        </div>
+        <span class="text-2xl text-amber-400"><i class="fas fa-book-open"></i></span>
+      </div>
+
+      <p class="text-xs sm:text-sm text-amber-200/80 mb-6">
+        నిర్వాహకులు లేదా మొదటి బృందం పలికిన శ్లోకం చివరి అక్షరంతో తదుపరి బృందం రామాయణ/భాగవత/సహస్రనామ శ్లోకాన్ని పాడాలి. ఉదాహరణను క్రింద పరిశీలించండి:
+      </p>
+
+      <!-- Interactive Simulator Box -->
+      <div id="shlokaDemoContainer" class="p-5 bg-black/50 rounded-2xl border border-amber-500/30 space-y-4">
+        <!-- Dynamic Shloka Content via JS -->
+      </div>
+
+      <div class="flex flex-wrap gap-3 mt-4 justify-between items-center">
+        <div class="text-xs text-amber-300/80">
+          <i class="fas fa-stopwatch mr-1 text-amber-400"></i> ప్రతి సమాధానానికి సమయం: <strong>30 సెకన్లు</strong> (పాస్ సమయం: 10 సెకన్లు)
+        </div>
+        <button onclick="nextSampleShloka()" class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold text-xs transition flex items-center gap-1.5 shadow">
+          <span>మరొక శ్లోక శృంఖల చూడండి</span>
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Rules & Scoring System (16 Complete Rules in Interactive Accordion) -->
+  <section id="rules" class="py-14 bg-[#1b080b] border-t border-amber-500/20 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-block p-2 bg-amber-950 rounded-full border border-amber-500/40 text-amber-400 mb-2">
+          <i class="fas fa-balance-scale text-xl"></i>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-amber-300 font-telugu">పోటీ నియమావళి & స్కోరింగ్ విధానం</h2>
+        <p class="text-xs sm:text-sm text-amber-200/80 mt-1">Rules & Regulations for Participating Teams</p>
+      </div>
+
+      <!-- Quick Scoring Summary Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+        <div class="p-3 bg-amber-950/50 rounded-xl border border-emerald-500/30 text-center">
+          <p class="text-xs text-amber-300">సరైన సమాధానం</p>
+          <p class="text-xl font-bold text-emerald-400">+2 మార్కులు</p>
+          <p class="text-[10px] text-amber-200/60">Correct Answer</p>
+        </div>
+        <div class="p-3 bg-amber-950/50 rounded-xl border border-yellow-500/30 text-center">
+          <p class="text-xs text-amber-300">పాక్షిక సమాధానం</p>
+          <p class="text-xl font-bold text-yellow-400">+1 మార్కు</p>
+          <p class="text-[10px] text-amber-200/60">Partial (Judges' call)</p>
+        </div>
+        <div class="p-3 bg-amber-950/50 rounded-xl border border-amber-500/30 text-center">
+          <p class="text-xs text-amber-300">సమయ పరిమితి</p>
+          <p class="text-xl font-bold text-amber-300">30 సెకన్లు</p>
+          <p class="text-[10px] text-amber-200/60">Time limit per team</p>
+        </div>
+        <div class="p-3 bg-amber-950/50 rounded-xl border border-blue-500/30 text-center">
+          <p class="text-xs text-amber-300">పాస్ సమయం</p>
+          <p class="text-xl font-bold text-blue-400">+10 సెకన్లు</p>
+          <p class="text-[10px] text-amber-200/60">Bonus on Pass</p>
+        </div>
+      </div>
+
+      <!-- Accordion of All 16 Rules -->
+      <div id="rulesAccordion" class="space-y-3">
+        <!-- Rendered with JavaScript for easy search/filter -->
+      </div>
+
+      <div class="mt-6 text-center text-xs text-amber-300/80 italic">
+        * పోటీల సమయానికి అవసరమైన మార్పులు చేసే పూర్తి హక్కు నిర్వాహకులదై ఉంటుంది. నిర్ణేతల తీర్పే అంతిమం.
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Registration & Payment Section -->
+  <section id="register" class="py-16 bg-rangoli border-t border-amber-500/30 px-4 sm:px-6 relative">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-amber-950 px-3 py-1 rounded-full border border-amber-500/40">
+          నమోదు ఫారమ్ &bull; Online Registration
+        </span>
+        <h2 class="text-3xl font-bold text-white font-telugu mt-2">బృంద నమోదు & చెల్లింపు వివరాలు</h2>
+        <p class="text-xs sm:text-sm text-amber-200/80 mt-1">
+          ప్రతి బృందానికి నమోదు రుసుము: <strong class="text-amber-400">రూ. 500/- మాత్రమే</strong> (గరిష్టంగా 20 బృందాలు మాత్రమే)
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8">
+        
+        <!-- Payment & Bank Info Box (Left 5 Cols) -->
+        <div class="lg:col-span-5 bg-[#250b0e] p-6 rounded-3xl border border-amber-500/40 shadow-xl flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-4 pb-3 border-b border-amber-500/20">
+              <i class="fas fa-qrcode text-2xl text-amber-400"></i>
+              <div>
+                <h3 class="text-lg font-bold text-amber-300">చెల్లింపు వివరాలు (Bank & UPI)</h3>
+                <p class="text-xs text-amber-200/70">Scan & Pay using any UPI App</p>
+              </div>
+            </div>
+
+            <!-- Authentic QR Code display -->
+            <div class="bg-white p-4 rounded-2xl max-w-[260px] mx-auto text-center shadow-lg border-2 border-amber-500">
+              <p class="text-[11px] font-bold text-gray-800 uppercase tracking-wider mb-1">SCAN & PAY ₹500</p>
+              
+              <!-- Real SVG QR Code representation for gvktrust@sbi -->
+              <div class="relative mx-auto flex items-center justify-center p-1 bg-white">
+                <img 
+                  id="dynamicQr"
+                  src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi%3A%2F%2Fpay%3Fpa%3Dgvktrust%40sbi%26pn%3DGVK%2520EDUCATIONAL%2520TRUST%26am%3D500%26cu%3DINR%26tn%3DAntyakshari%2520Registration"
+                  alt="UPI QR Code - GVK Educational Trust"
+                  class="w-48 h-48 mx-auto rounded"
+                  onerror="this.src='https://placehold.co/220x220/ffffff/000000?text=Scan+QR+gvktrust@sbi'"
+                />
+              </div>
+
+              <p class="text-xs font-extrabold text-blue-900 mt-2 font-mono">UPI ID: gvktrust@sbi</p>
+              <p class="text-[10px] text-gray-600 font-medium">State Bank of India</p>
+            </div>
+
+            <!-- Direct 1-Click Pay for Mobile -->
+            <div class="mt-4 text-center">
+              <a href="upi://pay?pa=gvktrust@sbi&pn=GVK%20EDUCATIONAL%20TRUST&am=500&cu=INR&tn=Antyakshari%202026%20Fee" 
+                 class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow transition">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Direct UPI App లో చెల్లించండి (Mobile)</span>
+              </a>
+            </div>
+
+            <!-- Account Details Table -->
+            <div class="mt-5 space-y-2 text-xs bg-amber-950/60 p-3.5 rounded-xl border border-amber-500/20">
+              <div class="flex justify-between py-1 border-b border-amber-500/10">
+                <span class="text-amber-200/70">ఖాతా పేరు (Account):</span>
+                <strong class="text-white">GVK EDUCATIONAL TRUST</strong>
+              </div>
+              <div class="flex justify-between py-1 border-b border-amber-500/10">
+                <span class="text-amber-200/70">బ్యాంక్ (Bank):</span>
+                <span class="text-amber-200 font-semibold">State Bank of India (SBI)</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-amber-500/10 items-center">
+                <span class="text-amber-200/70">ఖాతా సంఖ్య (A/C No):</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-mono text-white font-bold">43553021942</span>
+                  <button onclick="copyText('43553021942', 'ఖాతా నంబరు కాపీ చేయబడింది')" class="text-amber-400 hover:text-amber-300 text-xs" title="Copy Account">
+                    <i class="far fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between py-1 items-center">
+                <span class="text-amber-200/70">IFSC Code:</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-mono text-white font-bold">SBIN0021409</span>
+                  <button onclick="copyText('SBIN0021409', 'IFSC కోడ్ కాపీ చేయబడింది')" class="text-amber-400 hover:text-amber-300 text-xs" title="Copy IFSC">
+                    <i class="far fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-amber-500/20 text-[11px] text-amber-300/80">
+            <i class="fas fa-shield-alt text-amber-400 mr-1"></i> రుసుము చెల్లించిన తరువాత వచ్చే 12 అంకెల <strong>UTR / UPI Transaction ID</strong> ని రిజిస్ట్రేషన్ ఫారంలో తప్పక నమోదు చేయాలి.
+          </div>
+        </div>
+
+        <!-- Registration Form (Right 7 Cols) -->
+        <div class="lg:col-span-7 bg-[#230b0e] p-6 sm:p-8 rounded-3xl border border-amber-500/40 shadow-xl">
+          <form id="teamRegistrationForm" onsubmit="handleRegistrationSubmit(event)" class="space-y-4">
+            
+            <div class="border-b border-amber-500/30 pb-3">
+              <h3 class="text-lg font-bold text-amber-300 font-telugu">బృందం వివరాలు (Team Registration)</h3>
+              <p class="text-xs text-amber-200/70">దయచేసి పూర్తి వివరాలను ఖచ్చితంగా నమోదు చేయండి</p>
+            </div>
+
+            <!-- Institution Details -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-amber-200 mb-1">
+                  పాఠశాల / గురుకులం పేరు <span class="text-rose-400">*</span>
+                </label>
+                <input type="text" id="instName" required placeholder="వేద పాఠశాల లేదా గురుకులం పేరు" class="w-full px-3 py-2 text-xs rounded-xl bg-black/60 border border-amber-500/40 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-amber-200 mb-1">
+                  జిల్లా (District) <span class="text-rose-400">*</span>
+                </label>
+                <select id="district" required class="w-full px-3 py-2 text-xs rounded-xl bg-black/60 border border-amber-500/40 text-amber-100 focus:outline-none focus:border-amber-400">
+                  <option value="" disabled selected>మీ జిల్లాను ఎంచుకోండి</option>
+                  <option value="విశాఖపట్నం (Visakhapatnam)">విశాఖపట్నం (Visakhapatnam)</option>
+                  <option value="విజయనగరం (Vizianagaram)">విజయనగరం (Vizianagaram)</option>
+                  <option value="శ్రీకాకుళం (Srikakulam)">శ్రీకాకుళం (Srikakulam)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Guru / Principal details -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-amber-200 mb-1">
+                  గురువు / ప్రిన్సిపాల్ పేరు <span class="text-rose-400">*</span>
+                </label>
+                <input type="text" id="guruName" required placeholder="ఆచార్యుల వారి పేరు" class="w-full px-3 py-2 text-xs rounded-xl bg-black/60 border border-amber-500/40 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-amber-200 mb-1">
+                  సంప్రదింపు నంబర్ (Phone) <span class="text-rose-400">*</span>
+                </label>
+                <input type="tel" id="contactPhone" pattern="[0-9]{10}" required placeholder="10 అంకెల మొబైల్ నంబర్" class="w-full px-3 py-2 text-xs rounded-xl bg-black/60 border border-amber-500/40 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+              </div>
+            </div>
+
+            <!-- Team Name -->
+            <div>
+              <label class="block text-xs font-semibold text-amber-200 mb-1">
+                బృందం పేరు (Team Name) <span class="text-rose-400">*</span>
+              </label>
+              <input type="text" id="teamName" required placeholder="ఉదా: శ్రీరామ దూత బృందం, వేద వాణి" class="w-full px-3 py-2 text-xs rounded-xl bg-black/60 border border-amber-500/40 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+            </div>
+
+            <!-- 5 Team Members (Compulsory 5 students under 18) -->
+            <div class="pt-2">
+              <div class="flex justify-between items-center mb-2">
+                <label class="block text-xs font-bold text-amber-300">
+                  <i class="fas fa-users-cog mr-1"></i> బృందంలోని 5 గురు విద్యార్థుల వివరాలు (వయస్సు &le; 18)
+                </label>
+                <span class="text-[10px] text-amber-200/60">నాయకుడు + 4 విద్యార్థులు</span>
+              </div>
+
+              <div class="space-y-2">
+                <!-- Member 1 (Team Leader) -->
+                <div class="grid grid-cols-12 gap-2">
+                  <div class="col-span-8">
+                    <input type="text" id="student1" required placeholder="1. విద్యార్థి పేరు (బృంద నాయకుడు / Captain)*" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                  <div class="col-span-4">
+                    <input type="number" id="age1" min="8" max="18" required placeholder="వయస్సు (Age)*" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="grid grid-cols-12 gap-2">
+                  <div class="col-span-8">
+                    <input type="text" id="student2" required placeholder="2. విద్యార్థి పేరు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                  <div class="col-span-4">
+                    <input type="number" id="age2" min="8" max="18" required placeholder="వయస్సు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="grid grid-cols-12 gap-2">
+                  <div class="col-span-8">
+                    <input type="text" id="student3" required placeholder="3. విద్యార్థి పేరు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                  <div class="col-span-4">
+                    <input type="number" id="age3" min="8" max="18" required placeholder="వయస్సు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="grid grid-cols-12 gap-2">
+                  <div class="col-span-8">
+                    <input type="text" id="student4" required placeholder="4. విద్యార్థి పేరు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                  <div class="col-span-4">
+                    <input type="number" id="age4" min="8" max="18" required placeholder="వయస్సు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="grid grid-cols-12 gap-2">
+                  <div class="col-span-8">
+                    <input type="text" id="student5" required placeholder="5. విద్యార్థి పేరు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                  <div class="col-span-4">
+                    <input type="number" id="age5" min="8" max="18" required placeholder="వయస్సు *" class="w-full px-3 py-1.5 text-xs rounded-lg bg-black/40 border border-amber-500/30 text-white placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Proof UTR / Ref No. -->
+            <div class="pt-2 border-t border-amber-500/20">
+              <label class="block text-xs font-semibold text-amber-200 mb-1">
+                UPI / బ్యాంక్ UTR లేదా Transaction ID (రూ.500 చెల్లింపు) <span class="text-rose-400">*</span>
+              </label>
+              <input type="text" id="utrNumber" required placeholder="12 అంకెల UTR / Ref No (ఉదా: 429381928301)" class="w-full px-3 py-2 text-xs rounded-xl bg-black/60 border border-amber-500/40 text-white font-mono placeholder-amber-200/30 focus:outline-none focus:border-amber-400">
+            </div>
+
+            <div class="flex items-start gap-2 pt-1">
+              <input type="checkbox" id="rulesConsent" required class="mt-1 rounded bg-black border-amber-500 text-amber-600 focus:ring-0">
+              <label for="rulesConsent" class="text-[11px] text-amber-200/80">
+                మేము పోటీకి సంబంధించిన అన్ని నిబంధనలను చదివాము. మా బృంద సభ్యులందరూ 18 సంవత్సరాల లోపు వారేనని ధృవీకరిస్తున్నాము.
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-amber-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:brightness-110 shadow-lg shadow-amber-900/50 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              <i class="fas fa-check-double"></i>
+              <span>నమోదు పూర్తి చేయండి & రసీదు పొందండి</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Venue & Coordinators Section (వేదిక & సమన్వయకర్తలు) -->
+  <section id="venue" class="py-14 bg-gradient-to-b from-[#180709] to-[#20090d] border-t border-amber-500/20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="grid md:grid-cols-12 gap-8 items-center">
+        
+        <!-- Venue Details -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950 border border-amber-500/30 text-amber-300 text-xs">
+            <i class="fas fa-map-marked-alt text-amber-400"></i>
+            <span>కార్యక్రమ వేదిక (Competition Venue)</span>
+          </div>
+
+          <h3 class="text-2xl sm:text-3xl font-bold text-white font-telugu">శ్రీ వైష్ణవ సేవ సంగం, విజయనగరం</h3>
+          
+          <div class="p-5 bg-amber-950/40 rounded-2xl border border-amber-500/30 text-sm space-y-2 text-amber-100">
+            <p class="flex items-start gap-2.5">
+              <i class="fas fa-location-arrow text-amber-400 mt-1"></i>
+              <span>వ్యాస్ నగర్, మహారాజా పోస్ట్ గ్రాడ్యుయేట్ కళాశాల సమీపంలో (Near M.R. PG College)</span>
+            </p>
+            <p class="flex items-start gap-2.5">
+              <i class="fas fa-map-pin text-amber-400 mt-1"></i>
+              <span>పూల్‌బాగ్, విజయనగరం – 535002, ఆంధ్రప్రదేశ్.</span>
+            </p>
+            <p class="flex items-start gap-2.5">
+              <i class="fas fa-calendar-day text-amber-400 mt-1"></i>
+              <span>సమయం: <strong>2026 నవంబర్ 3వ వారం (తేదీలు త్వరలో తెలియజేయబడతాయి)</strong></span>
+            </p>
+          </div>
+
+          <!-- Google Maps Button -->
+          <div class="pt-1">
+            <a href="https://maps.google.com/?q=Maharajah+Post+Graduate+College+Pool+Bagh+Vizianagaram" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-900/60 hover:bg-amber-800 border border-amber-500/40 text-amber-300 text-xs font-semibold transition">
+              <i class="fas fa-directions"></i>
+              <span>గూగుల్ మ్యాప్స్‌లో దారి చూడండి (Open Maps)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coordinators Direct Dial Cards -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="p-6 bg-[#250b0e] rounded-3xl border border-amber-500/40 shadow-xl">
+            <h4 class="text-lg font-bold text-amber-300 font-telugu mb-4 flex items-center gap-2">
+              <i class="fas fa-headset text-amber-400"></i>
+              <span>కార్యక్రమ సమన్వయకర్తలు (Program Coordinators)</span>
+            </h4>
+
+            <div class="space-y-3.5">
+              <!-- Coordinator 1 -->
+              <div class="p-3.5 bg-black/40 rounded-xl border border-amber-500/20 flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-amber-300 uppercase font-semibold">సమన్వయకర్త (Coordinator)</p>
+                  <p class="text-base font-bold text-white">శ్రీ రామానుజం గారు</p>
+                  <p class="text-xs text-amber-200/80">Sri Ramanujam</p>
+                </div>
+                <a href="tel:7207550555" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold text-xs flex items-center gap-2 shadow">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>72075 50555</span>
+                </a>
+              </div>
+
+              <!-- Coordinator 2 -->
+              <div class="p-3.5 bg-black/40 rounded-xl border border-amber-500/20 flex items-center justify-between">
+                <div>
+                  <p class="text-xs text-amber-300 uppercase font-semibold">సమన్వయకర్త (Coordinator)</p>
+                  <p class="text-base font-bold text-white">శ్రీ రంగాచార్యులు గారు</p>
+                  <p class="text-xs text-amber-200/80">Sri Rangacharyulu</p>
+                </div>
+                <a href="tel:8328024752" class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold text-xs flex items-center gap-2 shadow">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>83280 24752</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-4 p-3 bg-amber-950/40 rounded-xl border border-amber-500/20 text-xs text-amber-200/80">
+              <i class="fas fa-building text-amber-400 mr-1.5"></i>
+              <strong>నిర్వాహక కార్యాలయం:</strong> GVK EDUCATIONAL TRUST, మాధవధార, విశాఖపట్నం – 530007.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#120406] text-amber-200/70 border-t border-amber-600/30 py-8 px-4 sm:px-6 mt-auto text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <div>
+        <p class="text-amber-400 font-bold text-sm">ఉత్తరాంధ్ర ప్రాంతీయ ఆధ్యాత్మిక అంత్యాక్షరి పోటీలు – 2026</p>
+        <p class="text-[11px] text-amber-200/60 mt-0.5">నిర్వాహకులు: GVK Educational Trust, విశాఖపట్నం & శ్రీ వైష్ణవ సేవ సంగం, విజయనగరం</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#rules" class="hover:text-amber-300 transition">నియమావళి</a>
+        <span>&bull;</span>
+        <a href="#register" class="hover:text-amber-300 transition">నమోదు ఫారమ్</a>
+        <span>&bull;</span>
+        <a href="#venue" class="hover:text-amber-300 transition">వేదిక & సంప్రదింపులు</a>
+      </div>
+      <div class="text-[11px] text-amber-400/90 font-serifTitle">
+        "ధర్మో రక్షతి రక్షితః"
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast Box -->
+  <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm bg-gradient-to-r from-amber-900 to-[#350b0f] border-2 border-amber-400 text-amber-100 p-4 rounded-2xl shadow-2xl flex items-center gap-3">
+    <div class="text-amber-400 text-xl flex-shrink-0" id="toastIcon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <div class="text-xs" id="toastMessage">నోటిఫికేషన్ మెసేజ్</div>
+  </div>
+
+  <!-- Registration Receipt Modal (Ready to Print / Save) -->
+  <div id="receiptModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-[#240b0e] border-2 border-amber-400 max-w-lg w-full rounded-3xl p-6 sm:p-8 text-amber-100 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      
+      <!-- Close button -->
+      <button onclick="closeReceiptModal()" class="absolute top-4 right-4 text-amber-400 hover:text-white text-lg">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- Printable Area -->
+      <div id="printArea" class="space-y-4 bg-[#1f0a0d] p-5 rounded-2xl border border-amber-500/30 text-amber-100">
+        
+        <div class="text-center pb-3 border-b border-amber-500/30">
+          <p class="text-[10px] text-amber-300 uppercase tracking-widest font-bold">శ్రీమన్నారాయణాయ నమః</p>
+          <h3 class="text-base sm:text-lg font-bold text-amber-300 font-telugu mt-1">ఆధ్యాత్మిక అంత్యాక్షరి పోటీలు – 2026</h3>
+          <p class="text-[11px] text-amber-200/80">బృంద నమోదు ధృవీకరణ రసీదు (Registration Receipt)</p>
+        </div>
+
+        <div class="flex justify-between items-center bg-black/40 p-2.5 rounded-lg border border-amber-500/20 text-xs">
+          <span>నమోదు సంఖ్య (Reg ID):</span>
+          <span class="font-mono font-bold text-amber-300 text-sm" id="recRegId">UTR-84920</span>
+        </div>
+
+        <div class="space-y-2 text-xs divide-y divide-amber-500/10">
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">బృందం పేరు (Team):</span>
+            <span class="font-bold text-white text-right" id="recTeamName">-</span>
+          </div>
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">పాఠశాల / గురుకులం:</span>
+            <span class="font-bold text-white text-right" id="recInstName">-</span>
+          </div>
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">జిల్లా:</span>
+            <span class="text-amber-300 text-right" id="recDistrict">-</span>
+          </div>
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">ఆచార్యుల / గురువు పేరు:</span>
+            <span class="text-white text-right" id="recGuruName">-</span>
+          </div>
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">సంప్రదింపు నంబర్:</span>
+            <span class="text-white font-mono text-right" id="recPhone">-</span>
+          </div>
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">చెల్లింపు UTR ID:</span>
+            <span class="font-mono text-emerald-400 font-bold text-right" id="recUtr">-</span>
+          </div>
+          <div class="pt-1.5 flex justify-between">
+            <span class="text-amber-200/70">చెల్లించిన మొత్తం:</span>
+            <span class="font-bold text-white text-right">రూ. 500/- (Paid)</span>
+          </div>
+        </div>
+
+        <!-- Registered Students List -->
+        <div class="pt-2">
+          <p class="text-xs font-bold text-amber-300 mb-1">నమోదైన 5 గురు విద్యార్థులు:</p>
+          <ol id="recStudentsList" class="list-decimal list-inside text-xs space-y-1 text-amber-100/90 bg-black/30 p-2.5 rounded-lg border border-amber-500/10">
+            <!-- populated by JS -->
+          </ol>
+        </div>
+
+        <div class="pt-2 text-center text-[10px] text-amber-300/70 border-t border-amber-500/20">
+          వేదిక: శ్రీ వైష్ణవ సేవ సంగం, వ్యాస్ నగర్, పూల్‌బాగ్, విజయనగరం – 535002.<br>
+          హెల్ప్‌లైన్: 72075 50555, 83280 24752
+        </div>
+      </div>
+
+      <!-- Modal Actions -->
+      <div class="mt-4 flex gap-3">
+        <button onclick="window.print()" class="flex-1 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-amber-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow">
+          <i class="fas fa-print"></i>
+          <span>రసీదు ప్రింట్ తీసుకోండి (Print Slip)</span>
+        </button>
+        <button onclick="closeReceiptModal()" class="px-5 py-2.5 rounded-xl bg-amber-900/60 hover:bg-amber-900 text-amber-200 font-semibold text-xs border border-amber-500/40">
+          ముగించు (Close)
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /* ----------------------------------------------------
+       1. DATA DEFINITION: RULES & REGULATIONS (16 RULES)
+    ---------------------------------------------------- */
+    const competitionRules = [
+      {
+        num: 1,
+        title: "అర్హత (Eligibility)",
+        desc: "18 సంవత్సరాల లోపు వయస్సు కలిగిన విద్యార్థులు మాత్రమే పాల్గొనడానికి అర్హులు. ఉత్తరాంధ్ర ప్రాంతంలోని (విశాఖపట్నం, విజయనగరం మరియు శ్రీకాకుళం జిల్లాలు) వేద పాఠశాలలు, గురుకులాలు మరియు సంస్కృత విద్యాసంస్థల విద్యార్థులు మాత్రమే పాల్గొనవచ్చు."
+      },
+      {
+        num: 2,
+        title: "బృంద నిర్మాణం (Team Composition)",
+        desc: "ప్రతి బృందంలో 5 మంది విద్యార్థులు ఉండాలి. ప్రతి విద్యాసంస్థ గరిష్టంగా 3 లేదా నిర్వాహకులు అనుమతించిన మేరకు బృందాలను నమోదు చేయవచ్చు."
+      },
+      {
+        num: 3,
+        title: "నమోదు ప్రక్రియ (Registration Process)",
+        desc: "రూ.500/- నమోదు రుసుము నిర్వాహక ట్రస్ట్ ఖాతాకు లేదా UPI ద్వారా చెల్లించాలి. చెల్లింపు స్క్రీన్‌షాట్/UTR నంబరును నమోదు ఫారమ్‌తో సమర్పించాలి. నమోదు ధృవీకరణ అనంతరం బృందానికి ప్రత్యేక Registration Number కేటాయించబడుతుంది."
+      },
+      {
+        num: 4,
+        title: "పోటీ విధానం (Tournament Format)",
+        desc: "మొత్తం 20 బృందాలను రెండు గ్రూపులుగా (A & B) విభజిస్తారు. ప్రతి గ్రూపులో 10 బృందాలు ఉంటాయి. ప్రతి గ్రూపు నుండి అత్యుత్తమ 4 బృందాలు Super-8 కు ఎంపిక చేయబడతాయి. Super-8 నుండి 4 బృందాలు Super-4 కు, ఆపై ఫైనల్స్‌లో విజేత మరియు రన్నరప్‌ను నిర్ణయిస్తారు."
+      },
+      {
+        num: 5,
+        title: "సమయ పరిమితి (Time Limit)",
+        desc: "ప్రతి బృందానికి సమాధానం చెప్పడానికి 30 సెకన్లు మాత్రమే సమయం ఇవ్వబడుతుంది. మొదటి బృందం చెప్పలేకపోతే రెండవ బృందానికి 10 సెకన్ల వరకు అదనపు సమయం (పాస్) ఇవ్వబడుతుంది. రెండు బృందాలు చెప్పలేకపోతే చెయ్యి ఎత్తే పద్ధతి ద్వారా అవకాశం ఉంటుంది. సమయం ముగిసిన తరువాత సమాధానం పరిగణించబడదు."
+      },
+      {
+        num: 6,
+        title: "సమాధాన విధానం (Answering Protocol)",
+        desc: "సమాధానం బృంద నాయకుడు (Team Captain) లేదా బృందం ముందుగా నిర్ణయించిన సభ్యుడు మాత్రమే అధికారికంగా చెప్పాలి. ఒకసారి సమాధానం ప్రకటించిన తర్వాత దానిని మార్చుకునే అవకాశం ఉండదు."
+      },
+      {
+        num: 7,
+        title: "స్కోరింగ్ విధానం (Scoring System)",
+        desc: "పూర్తి సరైన సమాధానానికి: 2 మార్కులు. పాక్షికంగా సరైన సమాధానానికి: 1 మార్కు (నిర్ణేతల అభిప్రాయం మేరకు). సమాధానం చెప్పలేకపోతే తదుపరి బృందానికి అవకాశం ఇవ్వబడుతుంది."
+      },
+      {
+        num: 8,
+        title: "పాస్ అవకాశం (Pass Option)",
+        desc: "ఒక బృందం సమాధానం చెప్పలేకపోతే, అదే ప్రశ్నను తదుపరి బృందానికి ఇవ్వవచ్చు. పాస్ అయిన ప్రశ్నకు నిర్ణీత 10 సెకన్లలో సరైన సమాధానం చెప్పిన బృందానికి పూర్తి మార్కులు లభిస్తాయి."
+      },
+      {
+        num: 9,
+        title: "టై-బ్రేకర్ నియమాలు (Tie-Breaker Rules)",
+        desc: "రెండు లేదా అంతకంటే ఎక్కువ బృందాలు సమాన మార్కులు సాధించినట్లయితే ప్రత్యేక టై-బ్రేకర్ రౌండ్ నిర్వహించబడుతుంది. వేగంగా మరియు సరైన సమాధానాలు ఇచ్చిన బృందం విజేతగా ప్రకటింపబడుతుంది."
+      },
+      {
+        num: 10,
+        title: "క్రమశిక్షణ & నియమావళి (Discipline)",
+        desc: "పోటీ సమయంలో మొబైల్ ఫోన్లు, పుస్తకాలు, లేదా ఇతర ఎలక్ట్రానిక్ సహాయక సాధనాలు ఉపయోగించరాదు. ఇతర బృందాలకు సూచనలు చేయడం లేదా ఆటంకం కలిగించడం పూర్తిగా నిషేధం. అసభ్య ప్రవర్తనకు పాల్పడితే బృందాన్ని అనర్హులుగా ప్రకటించే హక్కు నిర్వాహకులకు ఉంటుంది."
+      },
+      {
+        num: 11,
+        title: "ప్రేక్షకుల నియమాలు (Audience Protocol)",
+        desc: "ప్రేక్షకులు, తోటి విద్యార్థులు పోటీ సమయంలో సమాధానాలు గట్టిగా అరవడం కానీ సంజ్ఞలు చేయడం కానీ చేయరాదు. నిశ్శబ్దంగా మరియు గౌరవంగా కార్యక్రమాన్ని వీక్షించాలి."
+      },
+      {
+        num: 12,
+        title: "నిర్ణేతల నిర్ణయం (Judges' Decision)",
+        desc: "అన్ని రౌండ్లలో గౌరవ న్యాయనిర్ణేతల నిర్ణయమే అంతిమం మరియు అందరికీ కట్టుబడి ఉండాలి. నిర్ణేతల నిర్ణయంపై ఎటువంటి అభ్యంతరాలు లేదా అప్పీలు స్వీకరించబడవు."
+      },
+      {
+        num: 13,
+        title: "బహుమతులు (Prizes)",
+        desc: "ప్రథమ బహుమతి: రూ.8,000/-, ద్వితీయ బహుమతి: రూ.4,000/-, 5 ప్రోత్సాహక బహుమతులు మరియు పాల్గొన్న ప్రతి విద్యార్థికి అధికారిక Participation Certificate అందజేయబడుతుంది."
+      },
+      {
+        num: 14,
+        title: "నిర్వాహకుల హక్కులు (Organizers' Rights)",
+        desc: "అవసరమైతే పరిస్థితులను బట్టి నియమ నిబంధనలలో మార్పులు లేదా చేర్పులు చేయుటకు నిర్వాహక కమిటీకి పూర్తి హక్కు ఉంటుంది. కార్యక్రమ నిర్వహణకు సంబంధించిన అన్ని తుది నిర్ణయాలు నిర్వాహకులవే."
+      },
+      {
+        num: 15,
+        title: "కార్యక్రమ పవిత్ర లక్ష్యం (Objective)",
+        desc: "ఈ పోటీ యొక్క ప్రధాన ఉద్దేశ్యం కేవలం గెలుపు మాత్రమే కాకుండా, విద్యార్థులలో వేద విజ్ఞానం, శ్లోక జ్ఞాపకశక్తి, అధ్యయన నైపుణ్యం మరియు సనాతన ధర్మ సంస్కృతి విలువలను ప్రోత్సహించడం."
+      },
+      {
+        num: 16,
+        title: "రిజిస్ట్రేషన్ గడువు (Max Limit)",
+        desc: "మొదట నమోదు చేసుకున్న 20 బృందాలకు మాత్రమే ప్రాధాన్యత ఇవ్వబడుతుంది. కోటా పూర్తయిన వెంటనే రిజిస్ట్రేషన్లు నిలిపివేయబడతాయి."
+      }
+    ];
+
+    /* ----------------------------------------------------
+       2. SAMPLE ANTYAKSHARI DEMO SHLOKA CHAINS
+    ---------------------------------------------------- */
+    const antyakshariChains = [
+      {
+        round: "శ్రీమద్రామాయణం & విష్ణు సహస్రనామ రౌండ్",
+        shloka1: {
+          book: "శ్రీమద్రామాయణం (బాలకాండ)",
+          text: "శుక్లాంబరధరం విష్ణుం శశివర్ణం చతుర్భుజమ్ | ప్రసన్నవదనం ధ్యాయేత్ సర్వవిఘ్నోపశాంత<strong>యే</strong> ||",
+          lastLetter: "యే (యకారము)"
+        },
+        shloka2: {
+          book: "శ్రీ విష్ణు సహస్రనామ స్తోత్రం",
+          text: "<strong>యో</strong>గీశో యోగవిద్యాగ్రో యోగీశ్వరపరావరః | యోగక్షేమకరో యోగీ యోగభృత్ యోగవాన్ హరిః ||",
+          replyFrom: "బృందం - B ప్రతిస్పందన (శ్రీరామ దూత బృందం)"
+        }
+      },
+      {
+        round: "శ్రీమద్భాగవత & వేద విద్య రౌండ్",
+        shloka1: {
+          book: "శ్రీమద్భాగవతం (ప్రథమ స్కంధం)",
+          text: "జన్మాద్యస్య యతోऽన్వయాదితరతశ్చార్థేష్వభిజ్ఞః స్వరాట్ | తేనే బ్రహ్మ హృదా య ఆది కవయే ముహ్యంతి యత్సూర<strong>యః</strong> ||",
+          lastLetter: "యః / సః (విసర్గ లేదా సకారము)"
+        },
+        shloka2: {
+          book: "శ్రీమద్రామాయణం (సుందరకాండ)",
+          text: "<strong>స</strong> త్వస్మిన్ కదళీషండే కౌసుంభే భవనే స్థితః | ప్రధానే రక్షసాం శ్రేష్ఠే శుక్రవత్ పరిదృశ్యతే ||",
+          replyFrom: "బృందం - A ప్రతిస్పందన (వేదగర్భ బృందం)"
+        }
+      },
+      {
+        round: "విష్ణు సహస్రనామ రౌండ్",
+        shloka1: {
+          book: "శ్రీ విష్ణు సహస్రనామం",
+          text: "విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః | భూతకృద్భూతభృద్భావో భూతాత్మా భూతభావ<strong>నః</strong> ||",
+          lastLetter: "నః (నకారము)"
+        },
+        shloka2: {
+          book: "శ్రీమద్భాగవతం (గజేంద్ర మోక్షం)",
+          text: "<strong>న</strong>మో నమస్తేऽఖిలకారణాయ నిష్కారణాయాద్భుతకారణాయ | సర్వాగమామ్నాయమహార్ణవాయ నమోऽపవర్గాయ పరాయణాయ ||",
+          replyFrom: "బృందం - B ప్రతిస్పందన (కృష్ణ పరమాత్మ బృందం)"
+        }
+      }
+    ];
+
+    let currentChainIndex = 0;
+
+    function renderShlokaDemo() {
+      const item = antyakshariChains[currentChainIndex];
+      const container = document.getElementById('shlokaDemoContainer');
+      container.innerHTML = `
+        <div class="flex justify-between items-center text-xs text-amber-300 font-semibold border-b border-amber-500/20 pb-2">
+          <span><i class="fas fa-layer-group text-amber-400 mr-1"></i> ${item.round}</span>
+          <span class="bg-amber-900/60 text-amber-200 px-2.5 py-0.5 rounded text-[11px]">ఉదాహరణ ${currentChainIndex + 1} of ${antyakshariChains.length}</span>
+        </div>
+        
+        <!-- Shloka 1 -->
+        <div class="p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/20">
+          <div class="flex justify-between items-center text-xs mb-1 text-amber-300/80">
+            <span>బృందం - 1 పలికిన శ్లోకం (${item.shloka1.book})</span>
+            <span class="text-rose-300 font-bold">చివరి అక్షరం: ${item.shloka1.lastLetter}</span>
+          </div>
+          <p class="text-sm font-medium text-amber-100 font-telugu leading-relaxed">${item.shloka1.text}</p>
+        </div>
+
+        <div class="text-center text-amber-400 text-sm">
+          <i class="fas fa-arrow-down animate-bounce"></i>
+        </div>
+
+        <!-- Shloka 2 -->
+        <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/30">
+          <div class="flex justify-between items-center text-xs mb-1 text-emerald-300">
+            <span>${item.shloka2.replyFrom} (${item.shloka2.book})</span>
+            <span class="text-xs bg-emerald-800 text-white px-2 py-0.5 rounded font-bold">+2 మార్కులు!</span>
+          </div>
+          <p class="text-sm font-medium text-amber-100 font-telugu leading-relaxed">${item.shloka2.text}</p>
+        </div>
+      `;
+    }
+
+    function nextSampleShloka() {
+      currentChainIndex = (currentChainIndex + 1) % antyakshariChains.length;
+      renderShlokaDemo();
+    }
+
+    /* ----------------------------------------------------
+       3. RENDER RULES ACCORDION
+    ---------------------------------------------------- */
+    function renderRules() {
+      const accordion = document.getElementById('rulesAccordion');
+      accordion.innerHTML = competitionRules.map((rule, idx) => `
+        <div class="bg-black/40 rounded-xl border border-amber-500/20 overflow-hidden transition">
+          <button onclick="toggleRule(${idx})" class="w-full text-left p-3.5 flex justify-between items-center text-sm font-semibold text-amber-200 hover:text-amber-100 focus:outline-none">
+            <span class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-amber-900/80 text-amber-300 flex items-center justify-center text-xs font-bold">${rule.num}</span>
+              <span>${rule.title}</span>
+            </span>
+            <i id="ruleIcon-${idx}" class="fas fa-chevron-down text-xs text-amber-400 transition-transform duration-200"></i>
+          </button>
+          <div id="ruleContent-${idx}" class="hidden p-4 pt-0 text-xs text-amber-100/80 leading-relaxed border-t border-amber-500/10 bg-amber-950/20">
+            ${rule.desc}
+          </div>
+        </div>
+      `).join('');
+      // Open rule 1 and rule 5 by default
+      toggleRule(0);
+      toggleRule(4);
+    }
+
+    function toggleRule(index) {
+      const content = document.getElementById(`ruleContent-${index}`);
+      const icon = document.getElementById(`ruleIcon-${index}`);
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    /* ----------------------------------------------------
+       4. REGISTRATION SUBMIT & RECEIPT GENERATOR
+    ---------------------------------------------------- */
+    function handleRegistrationSubmit(event) {
+      event.preventDefault();
+
+      const instName = document.getElementById('instName').value.trim();
+      const district = document.getElementById('district').value;
+      const guruName = document.getElementById('guruName').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const teamName = document.getElementById('teamName').value.trim();
+      const utr = document.getElementById('utrNumber').value.trim();
+
+      const students = [
+        { name: document.getElementById('student1').value.trim(), age: document.getElementById('age1').value, lead: true },
+        { name: document.getElementById('student2').value.trim(), age: document.getElementById('age2').value },
+        { name: document.getElementById('student3').value.trim(), age: document.getElementById('age3').value },
+        { name: document.getElementById('student4').value.trim(), age: document.getElementById('age4').value },
+        { name: document.getElementById('student5').value.trim(), age: document.getElementById('age5').value }
+      ];
+
+      // Generate Registration Number
+      const randomId = "ANTY-2026-" + Math.floor(1000 + Math.random() * 9000);
+
+      // Populate Receipt Modal
+      document.getElementById('recRegId').innerText = randomId;
+      document.getElementById('recTeamName').innerText = teamName;
+      document.getElementById('recInstName').innerText = instName;
+      document.getElementById('recDistrict').innerText = district;
+      document.getElementById('recGuruName').innerText = guruName;
+      document.getElementById('recPhone').innerText = phone;
+      document.getElementById('recUtr').innerText = utr;
+
+      const studentsListEl = document.getElementById('recStudentsList');
+      studentsListEl.innerHTML = students.map(s => `
+        <li>
+          <span class="font-semibold text-white">${s.name}</span> (${s.age} సం.) 
+          ${s.lead ? '<span class="text-[10px] text-amber-300 font-bold ml-1">[బృంద నాయకుడు]</span>' : ''}
+        </li>
+      `).join('');
+
+      // Open Modal
+      document.getElementById('receiptModal').classList.remove('hidden');
+      document.getElementById('receiptModal').classList.add('flex');
+
+      showToast("బృందం విజయవంతంగా నమోదు చేయబడింది! మీ రసీదును భద్రపరుచుకోండి.", "success");
+    }
+
+    function closeReceiptModal() {
+      document.getElementById('receiptModal').classList.add('hidden');
+      document.getElementById('receiptModal').classList.remove('flex');
+    }
+
+    /* ----------------------------------------------------
+       5. UTILITY: COPY TO CLIPBOARD & TOAST
+    ---------------------------------------------------- */
+    function copyText(text, successMsg) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg, "info");
+      } catch (err) {
+        showToast("కాపీ చేయడంలో లోపం సంభవించింది", "error");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showToast(msg, type = "info") {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      const toastIcon = document.getElementById('toastIcon');
+
+      toastMsg.innerText = msg;
+      if (type === "success") {
+        toastIcon.innerHTML = `<i class="fas fa-check-circle text-emerald-400"></i>`;
+      } else if (type === "error") {
+        toastIcon.innerHTML = `<i class="fas fa-exclamation-triangle text-rose-400"></i>`;
+      } else {
+        toastIcon.innerHTML = `<i class="fas fa-info-circle text-amber-400"></i>`;
+      }
+
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 4000);
+    }
+
+    /* ----------------------------------------------------
+       6. WEB AUDIO API: SACRED TANPURA DRONE SYNTHESIZER
+    ---------------------------------------------------- */
+    let audioCtx = null;
+    let isPlayingAmbience = false;
+    let droneGain = null;
+    let droneOscs = [];
+
+    function toggleAmbience() {
+      if (!isPlayingAmbience) {
+        startDrone();
+      } else {
+        stopDrone();
+      }
+    }
+
+    function startDrone() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) {
+          audioCtx = new AudioContext();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        droneGain = audioCtx.createGain();
+        droneGain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+        droneGain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 3);
+        droneGain.connect(audioCtx.destination);
+
+        // Sa - Pa - Sa Indian Classical Tanpura frequencies (Base C# = 138.59 Hz)
+        const freqs = [138.59, 207.65, 277.18, 138.59 * 2];
+        droneOscs = freqs.map((f, i) => {
+          const osc = audioCtx.createOscillator();
+          const panner = audioCtx.createStereoPanner ? audioCtx.createStereoPanner() : null;
+          osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+          osc.frequency.setValueAtTime(f, audioCtx.currentTime);
+          
+          if (panner) {
+            panner.pan.value = (i % 2 === 0) ? -0.4 : 0.4;
+            osc.connect(panner);
+            panner.connect(droneGain);
+          } else {
+            osc.connect(droneGain);
+          }
+          osc.start();
+          return osc;
+        });
+
+        isPlayingAmbience = true;
+        document.getElementById('audioIcon').className = 'fas fa-volume-up text-amber-400 animate-pulse';
+        document.getElementById('audioLabel').innerText = 'ఆపు (Stop Audio)';
+        showToast("ఓం నాదం ప్రారంభమైనది (Tanpura Drone Playing)", "success");
+      } catch (e) {
+        console.error("Web Audio not supported or failed:", e);
+        showToast("ఆడియో ఫీచర్ ఈ బ్రౌజర్‌లో అందుబాటులో లేదు.", "error");
+      }
+    }
+
+    function stopDrone() {
+      if (droneGain && audioCtx) {
+        droneGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1);
+        setTimeout(() => {
+          droneOscs.forEach(o => o.stop());
+          droneOscs = [];
+        }, 1000);
+      }
+      isPlayingAmbience = false;
+      document.getElementById('audioIcon').className = 'fas fa-volume-mute';
+      document.getElementById('audioLabel').innerText = 'ఓం నాదం';
+      showToast("ఆడియో ఆపివేయబడింది", "info");
+    }
+
+    /* ----------------------------------------------------
+       7. BILINGUAL DISPLAY TOGGLE (TELUGU / ENGLISH HELPER)
+    ---------------------------------------------------- */
+    let isEnglish = false;
+    function toggleLanguage() {
+      isEnglish = !isEnglish;
+      const btnText = document.getElementById('langBtnText');
+      
+      if (isEnglish) {
+        btnText.innerText = 'తెలుగులో చూడండి';
+        showToast("Displaying English Subtitles and descriptions", "info");
+        document.documentElement.lang = "en";
+      } else {
+        btnText.innerText = 'English లో చూడండి';
+        showToast("తెలుగు భాషకు మార్చబడింది", "info");
+        document.documentElement.lang = "te";
+      }
+    }
+
+    // Initialize components on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderRules();
+      renderShlokaDemo();
+    });
+  </script>
+</body>
+</html>
